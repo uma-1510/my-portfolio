@@ -1,0 +1,104 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2.5rem 1.75rem;
+}
+
+
+.logo        { margin-bottom: 2.5rem; }
+
+.logoMark {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+  display: block;
+  line-height: 1.2;
+}
+.logoMark:hover { text-decoration: none; }
+
+.logoSub {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* ---- Links ---- */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    padding-left var(--duration-fast) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--color-text);
+  background: var(--color-border);
+  padding-left: 0.85rem;
+  text-decoration: none;
+}
+
+.active {
+  color: var(--color-text);
+  font-weight: 600;
+  padding-left: 0.85rem;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.link:hover .arrow,
+.active .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- Footer ---- */
+.navFooter {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .nav         { flex-direction: row; align-items: center; padding: 1.25rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
+  .logo        { margin-bottom: 0; }
+  .links       { flex-direction: row; flex-wrap: wrap; gap: 0.25rem; flex: none; }
+  .navFooter   { display: none; }
+}

@@ -1,0 +1,15 @@
+.highlight {
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-style: italic;
+  display: inline;
+  transition: filter var(--duration-fast) ease;
+}
+.highlight:hover { filter: brightness(0.92); }
+
+.yellow   { background: var(--hl-yellow);   color: var(--color-text); }
+.mint     { background: var(--hl-mint);     color: var(--color-text); }
+.sky      { background: var(--hl-sky);      color: var(--color-text); }
+.pink     { background: var(--hl-pink);     color: var(--color-text); }
+.lavender { background: var(--hl-lavender); color: var(--color-text); }
+.peach    { background: var(--hl-peach);    color: var(--color-text); }
