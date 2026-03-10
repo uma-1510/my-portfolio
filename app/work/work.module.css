@@ -1,3 +1,7 @@
+/* ============================================
+   WORK — Alternating timeline, light theme
+   ============================================ */
+
 .page {
   display: flex;
   justify-content: center;
@@ -6,8 +10,8 @@
 
 .content {
   width: 100%;
-  max-width: 700px;
-  padding: 3.5rem 0 4rem;
+  max-width: 900px;
+  padding: 3.5rem 0 5rem;
 }
 
 .title {
@@ -15,7 +19,7 @@
   font-size: clamp(1.8rem, 3vw, 2.3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
   color: var(--color-text);
 }
 
@@ -23,197 +27,219 @@
   font-size: 0.97rem;
   color: var(--color-muted);
   font-style: italic;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-/* ---- Skill tags row ---- */
-.skillRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
-}
+/* ============================================
+   TIMELINE SHELL
+   ============================================ */
 
-.skillPill {
-  font-size: 0.78rem;
-  font-family: var(--font-body);
-  color: var(--color-muted);
-  background: #fff;
-  border: 1px solid var(--color-border);
-  padding: 0.3rem 0.85rem;
-  border-radius: 20px;
-  letter-spacing: 0.02em;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.skillPill:hover {
-  border-color: var(--color-text);
-  color: var(--color-text);
-}
-
-/* ---- Timeline container ---- */
 .timeline {
   position: relative;
-  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* The vertical line */
+/* Centre vertical line */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
+  left: 50%;
+  top: 0;
+  bottom: 0;
   width: 1px;
+  transform: translateX(-50%);
   background: linear-gradient(
     to bottom,
     transparent,
-    var(--color-border) 5%,
-    var(--color-border) 95%,
+    var(--color-border) 3%,
+    var(--color-border) 97%,
     transparent
   );
+  z-index: 0;
 }
 
-/* ---- Single timeline item ---- */
+/* ============================================
+   SINGLE ITEM ROW
+   ============================================ */
+
 .item {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  align-items: start;
+  margin-bottom: 2.5rem;
   position: relative;
-  margin-bottom: 2rem;
-
-  /* animation base */
-  opacity: 0;
-  transform: translateX(-12px);
-  transition:
-    opacity 0.55s var(--ease-out),
-    transform 0.55s var(--ease-out);
 }
 
-.item.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Dot on the line */
-.item::before {
-  content: '';
-  position: absolute;
-  left: -2.4rem;
-  top: 1.35rem;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--color-text);
-  border: 2px solid var(--color-bg);
-  box-shadow: 0 0 0 1px var(--color-text);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.item:hover::before {
-  transform: scale(1.4);
-  background: var(--hl-mint);
-  box-shadow: 0 0 0 1px var(--hl-mint);
-}
-
-/* ---- Card ---- */
-.card {
-  background: #ffffff;
-  border: 1px solid #e8e6df;
-  border-radius: 10px;
-  padding: 1.65rem 1.85rem;
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 12px rgba(0,0,0,0.06),
-    0 8px 24px rgba(0,0,0,0.03);
-  transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-.card:hover {
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.05),
-    0 8px 20px rgba(0,0,0,0.09),
-    0 16px 36px rgba(0,0,0,0.05);
-  transform: translateY(-2px);
-}
-
-/* ---- Card header ---- */
-.cardHeader {
+/* Left column */
+.slotLeft {
+  padding-right: 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 0.25rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.role {
+/* Centre dot column */
+.slotCenter {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  z-index: 1;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.dotOpen,
+.item:hover .dot {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  transform: scale(1.35);
+}
+
+/* Right column */
+.slotRight {
+  padding-left: 2rem;
+}
+
+/* Hide the unused slot */
+.item.left  .slotRight { visibility: hidden; pointer-events: none; }
+.item.right .slotLeft  { visibility: hidden; pointer-events: none; }
+
+/* ============================================
+   CARD — collapsed header
+   ============================================ */
+
+.cardBtn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+  text-align: left;
+}
+
+.cardBtn:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  border-color: #c8c4bc;
+}
+
+.cardLogo {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 0.15rem;
+}
+
+.cardPeriod {
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.cardCompany {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 0.97rem;
   font-weight: 700;
   color: var(--color-text);
-  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
-.period {
-  font-size: 0.78rem;
+.cardRole {
+  font-size: 0.82rem;
   color: var(--color-muted);
-  font-style: italic;
-  white-space: nowrap;
-  padding-top: 0.2rem;
 }
 
-.company {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  margin-bottom: 0.25rem;
-}
-
-.company strong {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-/* ---- Environment tag ---- */
-.envTag {
+.badge {
   display: inline-block;
-  font-size: 0.72rem;
   font-family: var(--font-handwrite);
+  font-size: 0.8rem;
   font-weight: 600;
   padding: 1px 8px;
-  border-radius: 3px;
-  margin-bottom: 1rem;
+  border-radius: 4px;
+  margin-top: 0.2rem;
+  align-self: flex-start;
+  color: #1a1a18;
 }
 
-/* ---- Context blurb ---- */
+.hint {
+  font-size: 0.71rem;
+  color: var(--color-border);
+  font-style: italic;
+  margin-top: 0.3rem;
+  transition: color 0.2s ease;
+}
+.cardBtn:hover .hint { color: var(--color-muted); }
+
+/* ============================================
+   EXPANDED PANEL
+   ============================================ */
+
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.48s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease;
+}
+
+.panel.open {
+  max-height: 700px;
+  opacity: 1;
+}
+
+.panelInner {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 1rem 1.2rem 1.25rem;
+  margin-top: -2px;
+}
+
 .context {
-  font-size: 0.93rem;
+  font-size: 0.88rem;
+  line-height: 1.78;
   color: var(--color-muted);
   font-style: italic;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
   border-bottom: 1px solid var(--color-border);
 }
 
-/* ---- Bullet points ---- */
 .bullets {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.45rem;
 }
 
-.bullet {
-  font-size: 0.93rem;
-  line-height: 1.75;
-  color: #3a3a38;
+.bullets li {
+  font-size: 0.87rem;
+  line-height: 1.72;
+  color: var(--color-text);
   padding-left: 1.1rem;
   position: relative;
 }
 
-.bullet::before {
+.bullets li::before {
   content: '·';
   position: absolute;
   left: 0;
@@ -222,18 +248,17 @@
   line-height: 1.5;
 }
 
-/* ---- Tech tags ---- */
 .techRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 1.1rem;
-  padding-top: 1rem;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
   border-top: 1px solid var(--color-border);
 }
 
 .tech {
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   color: var(--color-muted);
   background: var(--color-nav-bg);
   border: 1px solid var(--color-border);
@@ -242,20 +267,28 @@
   letter-spacing: 0.02em;
 }
 
-/* ---- Resume CTA ---- */
-.cta {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-  font-size: 0.97rem;
-  color: var(--color-muted);
-}
+/* ============================================
+   MOBILE
+   ============================================ */
 
-/* ---- Mobile ---- */
-@media (max-width: 600px) {
-  .page     { padding: 0 1.25rem; }
-  .timeline { padding-left: 1.5rem; }
-  .item::before { left: -1.9rem; }
-  .card     { padding: 1.25rem 1.35rem; }
-  .cardHeader { flex-direction: column; gap: 0.2rem; }
+@media (max-width: 640px) {
+  .page { padding: 0 1.25rem; }
+  .timeline::before { left: 14px; }
+
+  .item {
+    grid-template-columns: 28px 1fr;
+    margin-bottom: 1.75rem;
+  }
+
+  .slotLeft  { display: none; }
+  .slotCenter {
+    grid-column: 1;
+    padding-top: 0.9rem;
+  }
+  .slotRight {
+    grid-column: 2;
+    padding-left: 0.85rem;
+    visibility: visible !important;
+  }
+  .item.left .slotRight { visibility: visible !important; }
 }
