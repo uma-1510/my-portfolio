@@ -1,63 +1,83 @@
-import type { Metadata } from 'next'
-import H from '../components/Highlight'
-import PageWrapper from '../components/PageWrapper'
+'use client'
 
-export const metadata: Metadata = {
-  title:       '[YOUR NAME]',
-  description: '[YOUR ONE-LINE DESCRIPTION]',
+import { motion } from 'framer-motion'
+import H from '../components/Highlight'
+import styles from './page.module.css'
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } }
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } }
+}
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show:   { opacity: 1, transition: { duration: 0.4, ease: 'easeOut' } }
 }
 
 export default function HomePage() {
   return (
-    <PageWrapper>
+    <div className={styles.page}>
 
-      <section style={{ marginBottom: '3rem' }}>
-        <p style={{ fontSize: '1.15rem', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-          I am a{' '}
-          <H color="yellow">[DEGREE / YEAR]</H>
-          {' '}who{' '}
-          <H color="mint">[THINGS I DO #1]</H>
-          ,{' '}
-          <H color="sky">[THINGS I DO #2]</H>
-          , and tries to{' '}
-          <H color="pink">[THINGS I TRY TO DO]</H>
-          .
-        </p>
+      {/* ---- Header bar ---- */}
+      <motion.header
+        className={styles.header}
+        initial="hidden"
+        animate="show"
+        variants={fadeIn}
+      >
+        <div className={styles.headerLogo}>
+          <span className={styles.emoji}>👩‍💻</span>
+          <span className={styles.dot}>·</span>
+          <span className={styles.me}>me</span>
+        </div>
+        <div className={styles.headerName}>
+          The digital space of <strong>Uma Chinnam</strong>
+        </div>
+      </motion.header>
 
-        <p style={{ fontSize: '1.15rem', lineHeight: 1.85 }}>
-          [SECOND SENTENCE — what I&apos;am doing / looking for]
-        </p>
-      </section>
+      {/* ---- Content ---- */}
+      <div className={styles.contentWrap}>
+        <motion.div
+          className={styles.content}
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
 
-      <section style={{ marginBottom: '3rem' }}>
-        <p>
-          [MY STORY — how you got here]
-        </p>
+          <motion.p className={styles.introPrimary} variants={fadeUp}>
+            Hi, I&apos;m <strong>Uma</strong> — a{' '}
+            <H color="mint">builder</H>
+            , a problem-solver, and someone who genuinely loves what she does.
+          </motion.p>
 
-        <p>
-          [WHAT I CARE ABOUT / WHAT KIND OF WORK EXCITES ME]
-        </p>
+          <motion.p className={styles.introSecondary} variants={fadeUp}>
+            I write code. I break things. I fix them. I learn. I&apos;m in my
+            final semester at Clark University, wrapping up my capstone and{' '}
+            <H color="pink">actively looking for a role in tech</H>
+            . I want to work on things that matter — products that reach people,
+            systems that actually hold up, problems worth caring about.
+          </motion.p>
 
-        <p>
-          [WHO I ARE OUTSIDE OF TECH]
-        </p>
-      </section>
+          <motion.p className={styles.body} variants={fadeUp}>
+            If you&apos;re here to find out who I am, stick around.
+          </motion.p>
 
-      <section>
-        <p>
-          [CLOSING LINE — invite them to explore]
-        </p>
+          <motion.p className={styles.links} variants={fadeUp}>
+            <a href="https://github.com/[YOUR_HANDLE]" target="_blank" rel="noopener noreferrer">GitHub</a>
+            {' · '}
+            <a href="https://linkedin.com/in/[YOUR_HANDLE]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            {' · '}
+            <a href="mailto:[YOUR_EMAIL]">Email</a>
+          </motion.p>
 
-        <p style={{ marginTop: '0.5rem' }}>
-          Find me on{' '}
-          <a href="https://github.com/[]" target="_blank" rel="noopener noreferrer">GitHub</a>
-          {' · '}
-          <a href="https://linkedin.com/in/[]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          {' · '}
-          <a href="mailto:[]">Email</a>
-        </p>
-      </section>
+        </motion.div>
+      </div>
 
-    </PageWrapper>
+    </div>
   )
 }

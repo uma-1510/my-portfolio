@@ -15,6 +15,7 @@ const NAV_LINKS: NavLink[] = [
   { href: '/work',    label: 'Work' },
   { href: '/blog',    label: 'Blog' },
   { href: '/contact', label: 'Contact Me' },
+  {href: '/projects', label: "Skills and Projects"}
 ]
 
 export default function Nav() {
@@ -24,14 +25,6 @@ export default function Nav() {
     <nav className={styles.nav}>
 
       <div>
-        <div className={styles.logo}>
-          <Link href="/" className={styles.logoMark}>
-            [NAME]          
-          </Link>
-          <p className={styles.logoSub}>
-            [TAGLINE]       
-          </p>
-        </div>
 
         <div className={styles.links}>
           {NAV_LINKS.map(({ href, label }) => {

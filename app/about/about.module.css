@@ -1,0 +1,65 @@
+
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  padding: 3.5rem 0 4rem;
+}
+
+/* ---- Page title ---- */
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  color: var(--color-text);
+}
+
+/* ---- Section heading — bold, like reference ---- */
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 2.25rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+}
+
+/* ---- Body text ---- */
+.content p {
+  font-size: 1.02rem;
+  line-height: 1.82;
+  color: #3a3a38;
+  margin-bottom: 0.9rem;
+}
+
+/* ---- Quick facts strip ---- */
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.fact {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  background: var(--color-nav-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-family: var(--font-body);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .page { padding: 0 1.25rem; }
+}

@@ -1,15 +1,27 @@
-.highlight {
-  padding: 1px 5px;
-  border-radius: 3px;
-  font-style: italic;
-  display: inline;
-  transition: filter var(--duration-fast) ease;
-}
-.highlight:hover { filter: brightness(0.92); }
 
-.yellow   { background: var(--hl-yellow);   color: var(--color-text); }
-.mint     { background: var(--hl-mint);     color: var(--color-text); }
-.sky      { background: var(--hl-sky);      color: var(--color-text); }
-.pink     { background: var(--hl-pink);     color: var(--color-text); }
-.lavender { background: var(--hl-lavender); color: var(--color-text); }
-.peach    { background: var(--hl-peach);    color: var(--color-text); }
+.highlight {
+  font-family: var(--font-handwrite);  
+  font-size: 1.15em;                   
+  /* font-weight: 600; */
+  font-style: normal;
+  padding: 1px 6px 2px;
+  border-radius: 2px;
+  display: inline;
+  line-height: 1;
+  transition:
+    filter var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+  cursor: default;
+}
+
+.highlight:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+.yellow   { background: var(--hl-yellow);   color: #1a1a18; }
+.mint     { background: var(--hl-mint);     color: #1a1a18; }
+.sky      { background: var(--hl-sky);      color: #1a1a18; }
+.pink     { background: var(--hl-pink);     color: #1a1a18; }
+.lavender { background: var(--hl-lavender); color: #1a1a18; }
+.peach    { background: var(--hl-peach);    color: #1a1a18; }

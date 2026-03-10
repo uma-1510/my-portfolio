@@ -4,16 +4,10 @@ import Nav from '../components/Nav'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s — [YOUR NAME]',     
-    default:  '[YOUR NAME]',
+    template: '%s — Uma Chinnam',
+    default:  'Uma Chinnam',
   },
-  description: '[ONE LINE ABOUT YOU]',  
-  openGraph: {
-    title:       '[YOUR NAME]',
-    description: '[ONE LINE ABOUT YOU]',
-    url:         'https://[yoursite].com',
-    siteName:    '[YOUR NAME]',
-  },
+  description: '[YOUR ONE-LINE DESCRIPTION]',
 }
 
 export default function RootLayout({
