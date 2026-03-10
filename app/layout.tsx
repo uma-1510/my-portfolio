@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className="layout__nav">
             <Nav />
           </div>
-          <main className="layout__main">
+          <main className="layout__main" style={{ overflowY: "auto", height: "100vh" }}>
             {children}
           </main>
         </div>

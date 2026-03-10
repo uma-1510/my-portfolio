@@ -4,6 +4,13 @@
   justify-content: space-between;
   height: 100%;
   padding: 2.5rem 1.75rem;
+  background-color: #eef2f9;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 15% 10%, rgba(180, 200, 240, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 85% 5%,  rgba(200, 185, 235, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 80% 90%, rgba(175, 210, 235, 0.4) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(195, 210, 240, 0.3) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
 
