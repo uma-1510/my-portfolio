@@ -1,61 +1,261 @@
-.projects { display: flex; flex-direction: column; }
-
-.project {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 1rem;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid var(--color-border);
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
 }
-.project:first-child { border-top: 1px solid var(--color-border); }
 
-.projectYear {
+.content {
+  width: 100%;
+  max-width: 700px;
+  padding: 3.5rem 0 4rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-size: 0.97rem;
+  color: var(--color-muted);
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+/* ---- Skill tags row ---- */
+.skillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.skillPill {
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.skillPill:hover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+/* ---- Timeline container ---- */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* The vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-border) 5%,
+    var(--color-border) 95%,
+    transparent
+  );
+}
+
+/* ---- Single timeline item ---- */
+.item {
+  position: relative;
+  margin-bottom: 2rem;
+
+  /* animation base */
+  opacity: 0;
+  transform: translateX(-12px);
+  transition:
+    opacity 0.55s var(--ease-out),
+    transform 0.55s var(--ease-out);
+}
+
+.item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dot on the line */
+.item::before {
+  content: '';
+  position: absolute;
+  left: -2.4rem;
+  top: 1.35rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-text);
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 0 1px var(--color-text);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.item:hover::before {
+  transform: scale(1.4);
+  background: var(--hl-mint);
+  box-shadow: 0 0 0 1px var(--hl-mint);
+}
+
+/* ---- Card ---- */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e6df;
+  border-radius: 10px;
+  padding: 1.65rem 1.85rem;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 12px rgba(0,0,0,0.06),
+    0 8px 24px rgba(0,0,0,0.03);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.05),
+    0 8px 20px rgba(0,0,0,0.09),
+    0 16px 36px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+
+/* ---- Card header ---- */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.period {
   font-size: 0.78rem;
   color: var(--color-muted);
   font-style: italic;
-  padding-top: 0.15rem;
+  white-space: nowrap;
+  padding-top: 0.2rem;
 }
 
-.projectContent { display: flex; flex-direction: column; gap: 0.5rem; }
+.company {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
 
-.projectTitle {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+.company strong {
+  color: var(--color-text);
   font-weight: 600;
-  margin: 0;
 }
 
-.projectTitle a {
-  text-decoration: none;
-  border-bottom: 1px solid var(--color-border);
-  transition: border-color var(--duration-fast) ease;
-}
-.projectTitle a:hover { border-color: var(--color-text); }
-
-.projectDesc {
-  font-size: 0.95rem;
-  color: var(--color-muted);
-  line-height: 1.7;
-  margin: 0;
-}
-
-.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
-
-.tag {
+/* ---- Environment tag ---- */
+.envTag {
+  display: inline-block;
   font-size: 0.72rem;
-  color: var(--color-muted);
-  background: var(--color-border);
-  padding: 2px 8px;
-  border-radius: 2px;
-  letter-spacing: 0.03em;
+  font-family: var(--font-handwrite);
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 3px;
+  margin-bottom: 1rem;
 }
 
-.divider {
-  margin-top: 3rem;
-  padding-top: 2rem;
+/* ---- Context blurb ---- */
+.context {
+  font-size: 0.93rem;
+  color: var(--color-muted);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ---- Bullet points ---- */
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bullet {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: #3a3a38;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.bullet::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-muted);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* ---- Tech tags ---- */
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--color-border);
 }
 
+.tech {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  background: var(--color-nav-bg);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Resume CTA ---- */
+.cta {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.97rem;
+  color: var(--color-muted);
+}
+
+/* ---- Mobile ---- */
 @media (max-width: 600px) {
-  .project { grid-template-columns: 1fr; gap: 0.25rem; }
+  .page     { padding: 0 1.25rem; }
+  .timeline { padding-left: 1.5rem; }
+  .item::before { left: -1.9rem; }
+  .card     { padding: 1.25rem 1.35rem; }
+  .cardHeader { flex-direction: column; gap: 0.2rem; }
 }
