@@ -30,7 +30,6 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
     observer.observe(el)
     return () => observer.disconnect()
   }, [delay])
-
   return (
     <div ref={ref} className={styles.card}>
 
@@ -48,7 +47,6 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
           <span className={styles.previewLabel}>add screenshot or demo</span>
         </div>
       </div>
-
       <div className={styles.cardBody}>
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>{title}</h3>

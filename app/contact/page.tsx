@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
+'use client'
+
 import H from '../../components/Highlight'
+import Terminal from '../../components/Terminal'
 import styles from './contact.module.css'
 
-export const metadata: Metadata = { title: 'Contact' }
 
 const LINKS = [
   { emoji: '✉️', label: 'Email',    href: 'mailto:[YOUR_EMAIL]' },
@@ -57,6 +58,9 @@ export default function ContactPage() {
           </a>
           {' '}— I check it regularly and genuinely enjoy connecting with people there.
         </p>
+
+        {/* Terminal — types out contact details interactively */}
+        <Terminal />
 
         {/* Link chips */}
         <p className={styles.linksLabel}>Find me at</p>

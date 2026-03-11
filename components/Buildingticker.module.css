@@ -1,0 +1,55 @@
+.ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.6rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: var(--color-bg);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-border);
+  font-family: var(--font-body);
+  line-height: 1;
+}
+
+/* Tiny green dot before "building" */
+.label::before {
+  content: '●';
+  color: #3fb950;
+  font-size: 0.5rem;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+.value {
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.out {
+  opacity: 0;
+  transform: translateY(-4px);
+}
