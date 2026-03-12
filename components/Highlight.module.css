@@ -1,13 +1,9 @@
 
 .highlight {
-  font-family: var(--font-handwrite);  
-  font-size: 1.15em;                   
-  /* font-weight: 600; */
+  /* font-family: var(--font-cursive);   */
+  font-size: 1 em;                   
   font-style: normal;
   padding: 1px 6px 2px;
-  border-radius: 2px;
-  display: inline;
-  line-height: 1;
   transition:
     filter var(--duration-fast) ease,
     transform var(--duration-fast) ease;

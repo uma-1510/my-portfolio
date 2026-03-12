@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import styles from './about.module.css'
+import PageHeader from '../../components/Pageheader'
 
 export const metadata: Metadata = { title: 'About' }
 
@@ -7,11 +8,12 @@ export default function AboutPage() {
   return (
     <div className={styles.page}>
       <div className={styles.content}>
+        <PageHeader />
 
         <h1 className={styles.title}>A Bit about Myself</h1>
 
         <h2 className={styles.sectionTitle}>Who am I?</h2>
-        <p>
+        <p >
           My name is Uma Maheswari Chinnam. Most people call me Uma — short,
           sweet, easy to remember.
         </p>
