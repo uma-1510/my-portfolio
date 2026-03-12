@@ -59,6 +59,7 @@
   letter-spacing: -0.03em;
   margin-bottom: 0rem;
   font-family:Arial, Helvetica, sans-serif;
+  line-height: 1.1;
   font-size: 3rem;
   font-weight: 600;
   color: var(--color-text);
@@ -69,6 +70,7 @@
   font-weight: 600;
   color: var(--color-text);
   font-family:Arial, Helvetica, sans-serif;
+  margin-top: 0.1rem;
   margin-bottom: 2rem;
 }
 

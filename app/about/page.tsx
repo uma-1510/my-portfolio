@@ -10,7 +10,7 @@ export default function AboutPage() {
       <div className={styles.content}>
         <PageHeader />
 
-        <h1 className={styles.title}>A Bit about Myself</h1>
+        <h1 className={styles.title}>A very brief introduction of me</h1>
 
         <h2 className={styles.sectionTitle}>Who am I?</h2>
         <p >
@@ -39,8 +39,7 @@ export default function AboutPage() {
 
         <h2 className={styles.sectionTitle}>Where I&apos;m from</h2>
         <p>
-          I grew up in Hyderabad, India. Right now, I call Worcester home,
-          though honestly, I am always in Boston. I am open to relocating
+          I grew up in Hyderabad, India. Right now, I call Boston home. I am open to relocating
           anywhere in the U.S. I think being young is the best time to move
           somewhere new, figure out a city, and see how you grow in it.
         </p>
@@ -48,8 +47,8 @@ export default function AboutPage() {
         <h2 className={styles.sectionTitle}>Education</h2>
         <p>
           I am doing my Master&apos;s in Computer Science at Clark University,
-          where I am a Dean&apos;s Scholar. I also work as a research
-          assistant — I spent time analyzing deep fake detection models
+          where I am a Dean Scholar. I also work as a research
+          assistant where I spent time analyzing deep fake detection models
           alongside Professor Rand Alfaris, which pushed me in ways a classroom
           alone never could have.
         </p>
@@ -90,7 +89,7 @@ export default function AboutPage() {
         <h2 className={styles.sectionTitle}>Life right now</h2>
         <p>
           Pretty good, honestly. Busy in the way that feels productive.
-          Building, learning, job hunting, figuring things out — which is
+          Building, learning, job hunting, figuring things out which is
           exactly where I want to be. The uncertainty is real, but so is the
           momentum. I will take that.
         </p>

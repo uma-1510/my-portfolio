@@ -1,7 +1,3 @@
-/* ============================================
-   WORK — Alternating timeline, light theme
-   ============================================ */
-
 .page {
   display: flex;
   justify-content: center;
@@ -30,10 +26,6 @@
   margin-bottom: 3.5rem;
 }
 
-/* ============================================
-   TIMELINE SHELL
-   ============================================ */
-
 .timeline {
   position: relative;
   display: flex;
@@ -58,10 +50,6 @@
   );
   z-index: 0;
 }
-
-/* ============================================
-   SINGLE ITEM ROW
-   ============================================ */
 
 .item {
   display: grid;
@@ -114,9 +102,6 @@
 .item.left  .slotRight { visibility: hidden; pointer-events: none; }
 .item.right .slotLeft  { visibility: hidden; pointer-events: none; }
 
-/* ============================================
-   CARD — collapsed header
-   ============================================ */
 
 .cardBtn {
   all: unset;
@@ -186,10 +171,6 @@
   transition: color 0.2s ease;
 }
 .cardBtn:hover .hint { color: var(--color-muted); }
-
-/* ============================================
-   EXPANDED PANEL
-   ============================================ */
 
 .panel {
   overflow: hidden;
@@ -266,10 +247,6 @@
   border-radius: 3px;
   letter-spacing: 0.02em;
 }
-
-/* ============================================
-   MOBILE
-   ============================================ */
 
 @media (max-width: 640px) {
   .page { padding: 0 1.25rem; }

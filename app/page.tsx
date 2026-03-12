@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './page.module.css'
 import H from '../components/Highlight'
-// import Particlebackground from '../components/Particlebackground'
+import Particlebackground from '../components/Particlebackground'
 
 
 const ROLES = ['Software Engineer', 'Data Engineer', 'Full-Stack Developer', 'AI + Backend Builder']
@@ -68,13 +68,13 @@ export default function HomePage() {
         <div className={styles.hero_section}>
         <motion.div className={styles.avatarWrapper} variants={fadeUp}>
   <div className={styles.avatarBox}>
-    <img src="/avatar.png" alt="Uma" className={styles.avatarImg} />
+    <img src="/avatar.jpg" alt="Uma" className={styles.avatarImg} />
   </div>
   <span className={styles.onlineDot} />
 </motion.div>
 
 <motion.p className={styles.hello} variants={fadeUp}>
-  Hello, I'm Uma 👋
+  Hello, I'm Uma <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋" width="58" height="58" style={{display:'inline', verticalAlign:'middle'}} />
 </motion.p>
 
 <motion.p className={styles.role} variants={fadeUp}>
@@ -88,7 +88,7 @@ export default function HomePage() {
         </motion.p>
 
         <motion.p className={styles.stick_here} variants={fadeUp}>
-          Anyways, since you've already in here, feel free to stick around, explore a bit, and maybe say hi.
+          Anyways, since you've already here, feel free to stick around, explore a bit, and maybe say hi.
         </motion.p>
 
 <div className={styles.socials_wrap}>

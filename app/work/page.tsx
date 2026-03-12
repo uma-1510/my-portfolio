@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import styles from './work.module.css'
 
 interface Entry {
