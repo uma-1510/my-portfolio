@@ -63,7 +63,7 @@ export default function HireMePage() {
     <div className={styles.page}>
       <div className={styles.content}>
 
-        {/* Hero Section */}
+        
         <div className={styles.hero}>
           <h1 className={styles.title}>Hire me!</h1>
           <p className={styles.tagline}>
@@ -76,7 +76,7 @@ export default function HireMePage() {
           </div>
         </div>
 
-        {/* ---- Intro ---- */}
+       
         <div className={styles.introBlock}>
           <p>
             Thank you for your interest! I am actively looking for a{' '}
@@ -87,7 +87,7 @@ export default function HireMePage() {
           </p>
         </div>
 
-        {/* ---- TL;DR ---- */}
+     
         <h2 className={styles.sectionHeading}>TL;DR</h2>
         <ul className={styles.tldr}>
           <li>
