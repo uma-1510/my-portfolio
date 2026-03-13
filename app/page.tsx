@@ -55,12 +55,9 @@ function TypeWriter({ words }: { words: string[] }) {
 export default function HomePage() {
   return (
     <div className={styles.page}>
-      {/* <Particlebackground /> */}
 
-      {/* ── Hero content ── */}
       <motion.div
         className={styles.hero}
-        // style={{ position: 'relative', zIndex: 1 }}
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -83,18 +80,18 @@ export default function HomePage() {
 </div>
 
         <motion.p className={styles.bio} variants={fadeUp}>
-          I am a software engineer and a masters graduate building scalable systems and AI-driven applications.I spend most of my time building applications and AI tools that actually do something interesting.
-          I am currently <H> looking for a role in tech </H> (something across backend, full-stack, data engineering, or the intersection of AI and real systems) and aiming to work for good. 
+          I am a software engineer and a masters graduate building scalable systems and AI-driven applications.I bring around 1.5 years of professional experience across full-stack development and distributed systems, and I'm always actively working on building intresting side projects!<br></br>
+          I am currently <H> looking for a role in tech </H> across various domains to solve complex real-world probems and aiming to work for good. 
         </motion.p>
 
         <motion.p className={styles.stick_here} variants={fadeUp}>
-          Anyways, since you've already here, feel free to stick around, explore a bit, and maybe say hi.
+          Anyways, since you are already here, feel free to stick around, explore a bit, and maybe say hi.
         </motion.p>
 
 <div className={styles.socials_wrap}>
 <motion.div className={styles.socials} variants={fadeUp}>
   <a
-    href="https://github.com/[YOUR_HANDLE]"
+    href="https://github.com/uma-1510"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="GitHub"
@@ -106,7 +103,7 @@ export default function HomePage() {
   </a>
 
   <a
-    href="https://linkedin.com/in/[YOUR_HANDLE]"
+    href="https://www.linkedin.com/in/uma-chinnam-ab030320b/"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="LinkedIn"
@@ -118,7 +115,7 @@ export default function HomePage() {
   </a>
 
   <a
-    href="mailto:[YOUR_EMAIL]"
+    href="mailto:umach1503@gmail.com"
     aria-label="Email"
     className={styles.icon}
   >
@@ -137,7 +134,7 @@ export default function HomePage() {
     </svg>
   </a>
   <a
-  href="/resume.pdf"
+  href="/resume.docx"
   target="_blank"
   rel="noopener noreferrer"
   className={styles.resume}

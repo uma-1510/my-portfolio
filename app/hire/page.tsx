@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react'
 import type { Metadata } from 'next'
 import styles from './hire.module.css'
 
-/* ---- Animated card that fades up on scroll ---- */
 function AnimCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -33,28 +32,19 @@ function AnimCard({ children, delay = 0 }: { children: React.ReactNode; delay?: 
 
 const WHAT_YOU_CAN_DO = [
   {
-    title: 'Backend & Data Engineering',
-    emoji: '⚙️',
-    body: `I am proficient in Java, Python, and TypeScript — and actively learning Go. I build RESTful APIs and microservices using Spring Boot, FastAPI, and Node.js, with solid knowledge of both relational databases (PostgreSQL, MySQL) and document stores (MongoDB). I know my way around AWS, Docker, and CI/CD pipelines. I have shipped production systems that process telemetry from tens of thousands of endpoints, and I take reliability seriously.`,
+    title: 'Full stack',
+    body: `I am proficient in multiple programming languages (such as JavaScript & variants, Go, and Python, on top of knowing Java and PHP) and various web frameworks (such as Next.js & React & friends, Django & Flask & FastAPI, etc.). I have also worked with relational (SQLite, PostgreSQL and MySQL) and document (MongoDB & variants) databases, as well as AWS and Google Cloud environments. I often apply various best practices, including REST APIs and caching, as well as DevOps (especially CI/CD). Often I do development work as part of a larger system.`,
     tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker', 'CI/CD'],
   },
   {
     title: 'AI & Intelligent Systems',
-    emoji: '🧠',
-    body: `I have hands-on experience building GenAI-powered applications — not just calling APIs, but designing systems around them. I built a RAG-powered AI assistant using LangChain, worked on deep fake detection research, and built a medical Q&A assistant with FAISS vector search and semantic caching. I understand how to make AI work in production: grounded, efficient, and reliable.`,
+    body: `I have hands-on experience building GenAI-powered applications - not just calling APIs, but designing systems around them. I built a RAG-powered AI assistant using LangChain, worked on deep fake detection research, and built a medical Q&A assistant with FAISS vector search and semantic caching. I understand how to make AI work in production: grounded, efficient, and reliable.`,
     tags: ['LangChain', 'RAG', 'FAISS', 'TensorFlow', 'Gemini', 'Sentence-Transformers', 'Prompt Engineering'],
   },
   {
     title: 'Data Engineering & Pipelines',
-    emoji: '🔥',
-    body: `On top of backend skills, I have real production experience with distributed data infrastructure. I designed Spark ETL pipelines on AWS, integrated Kafka for event-driven architectures, and used Solr for large-scale search. I have a strong interest in data — collecting it, transforming it, and making it useful. If your team cares about data quality and pipeline reliability, I fit in naturally.`,
-    tags: ['Apache Spark', 'Apache Kafka', 'Apache Solr', 'ETL', 'AWS', 'Prometheus', 'CloudWatch'],
-  },
-  {
-    title: 'Full-Stack Development',
-    emoji: '⚛️',
-    body: `I build frontends too — React, Next.js, and TypeScript are tools I use regularly. I care about the full picture: clean APIs that are easy to consume, UIs that are fast and clear, and systems where the frontend and backend are genuinely well-connected. I have shipped full-stack applications that real users depend on.`,
-    tags: ['React', 'Next.js', 'TypeScript', 'REST APIs', 'Responsive Design'],
+    body: `On top of backend skills, I have real production experience with distributed data infrastructure. I designed Spark ETL pipelines on AWS, integrated Kafka for event-driven architectures, and used ElasticSearch for large-scale search.`,
+    tags: ['Apache Spark', 'Apache Kafka', 'ElasticSearch', 'ETL', 'AWS', 'Prometheus', 'CloudWatch'],
   },
 ]
 
@@ -82,8 +72,8 @@ export default function HireMePage() {
             Thank you for your interest! I am actively looking for a{' '}
             <strong>new grad / entry-level software engineering role</strong>{' '}
             and available to start <strong>immediately</strong>. I have built real systems
-            at real companies — across data engineering, distributed infrastructure, and
-            AI — and I am genuinely hungry to keep going deeper.
+            at multiple companies across data engineering, distributed infrastructure, and
+            AI and I am ready to learn more and contribute to the team and help you achieve your goals!
           </p>
         </div>
 
@@ -92,28 +82,21 @@ export default function HireMePage() {
         <ul className={styles.tldr}>
           <li>
             <strong>Quick, self-directed learner.</strong> I have picked up new languages,
-            frameworks, and tools on the fly across every role I have held. I do not wait
-            to be taught — I figure it out and then make it production-ready.
+            frameworks, and tools on the fly across every role I have held. Always curious about new technical solutions.
           </li>
           <li>
-            <strong>Full-stack engineer with a backend-first mindset.</strong> I am proficient
-            in Java and Python, actively learning Go, and comfortable with TypeScript, React,
-            and Next.js. I know how to build end-to-end — from schema design to UI.
+            <strong>Full-stack development </strong> I am proficient
+            in Java, Python, JS/TS and familiar with Go.
+            Good at databse technologies and implemented them in production like cachine and indexing.
           </li>
           <li>
             <strong>Distributed systems and data engineering experience.</strong> I have
             shipped Spark ETL pipelines, Kafka-based event systems, and RAG-powered AI
-            assistants in real production environments. This is not classroom knowledge.
+            assistants in real production environments. Not just classroom knowledge.
           </li>
           <li>
-            <strong>Strong DevOps fluency.</strong> Docker, CI/CD, AWS deployments, CloudWatch,
-            Prometheus — I understand the full deployment lifecycle and take operational
-            reliability seriously.
-          </li>
-          <li>
-            <strong>Genuine interest in AI and system design.</strong> I think about how
-            systems are architected, not just how they are coded. I have research experience
-            in deep fake detection and hands-on experience building intelligent applications.
+            I understand the full deployment lifecycle and have experience with <strong>CI/CD and dockerization</strong>, 
+            as well as deploying in both traditional UNIX and cloud "serverless" environments.
           </li>
         </ul>
 
@@ -125,10 +108,9 @@ export default function HireMePage() {
         </p>
 
         <div className={styles.cards}>
-          {WHAT_YOU_CAN_DO.map(({ title, emoji, body, tags }, i) => (
+          {WHAT_YOU_CAN_DO.map(({ title, body, tags }, i) => (
             <AnimCard key={title} delay={i * 80}>
               <div className={styles.cardHead}>
-                <span className={styles.cardEmoji}>{emoji}</span>
                 <h3 className={styles.cardTitle}>{title}</h3>
               </div>
               <p className={styles.cardBody}>{body}</p>
@@ -139,7 +121,7 @@ export default function HireMePage() {
           ))}
         </div>
 
-        {/* ---- More about my experience ---- */}
+        {/* ---- More about my experience ----
         <h2 className={styles.sectionHeading}>More about my experience</h2>
 
         <div className={styles.expBlock}>
@@ -163,7 +145,7 @@ export default function HireMePage() {
               analytical thinking.
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className={styles.expBlock}>
           <h3 className={styles.expSubhead}>Projects</h3>
@@ -215,12 +197,12 @@ export default function HireMePage() {
         {/* ---- CTA ---- */}
         <div className={styles.cta}>
           <p>
-            I am actively interviewing. Do not hesitate to reach out — I would love to
+            I am actively interviewing. Do not hesitate to reach out, I would love to
             learn more about what your team is building.
           </p>
           <div className={styles.ctaLinks}>
             <a href="/contact" className={styles.ctaPrimary}>Get in touch →</a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.ctaSecondary}>
+            <a href="/resume.docx" target="_blank" rel="noopener noreferrer" className={styles.ctaSecondary}>
               Download resume
             </a>
           </div>

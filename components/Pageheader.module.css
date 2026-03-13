@@ -11,12 +11,10 @@
   padding: 1.25rem 3rem;
   flex-wrap: wrap;
   gap: 0.5rem;
-  /* Fully transparent — takes the colour of whatever page is behind it */
-  background: transparent;
-  border: none;
+  background-color:  #FAF9F7 ;
+  background-attachment: fixed;
 }
 
-/* ── Text always inherits from the page ─── */
 .headerLogo {
   display: flex;
   align-items: baseline;

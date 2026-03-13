@@ -46,7 +46,7 @@ export default function Nav() {
 
       <div className={styles.navFooter}>
         <p className={styles.footerText}>
-          [SHORT FOOTER NOTE]  
+          {/* [SHORT FOOTER NOTE]   */}
         </p>
       </div>
     </nav>
