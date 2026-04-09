@@ -1,0 +1,75 @@
+/* ---- Fixed bottom navigation controls ---- */
+.controls {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  left: calc(var(--nav-width) + 1.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;   /* let clicks through the gap */
+  z-index: 40;
+}
+
+.btn {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  background: rgba(250, 249, 247, 0.88);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.07),
+    0 1px 2px rgba(0,0,0,0.04);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  color: var(--color-text);
+  border-color: #bbb;
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.11),
+    0 1px 3px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0px);
+}
+
+.arrow {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.label {
+  line-height: 1;
+}
+
+/* ---- Mobile: full-width bar ---- */
+@media (max-width: 768px) {
+  .controls {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 1rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.9rem;
+  }
+}

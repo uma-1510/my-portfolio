@@ -22,6 +22,9 @@
   --content-max:     700px;
   --content-pad:     3rem;
 
+  /* Height of the fixed PageHeader — used to offset content below it */
+  --header-height:   64px;
+
   --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast:   0.2s;
   --duration-base:   0.4s;
@@ -42,11 +45,6 @@ body {
   line-height: 1.75;
   min-height: 100vh;
   background-color:  #FAF9F7 ;
-  /* background-image:
-    radial-gradient(ellipse 70% 50% at 15% 10%, rgba(180, 200, 240, 0.5) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 45% at 85% 5%,  rgba(200, 185, 235, 0.35) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 80% 90%, rgba(175, 210, 235, 0.4) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 10% 85%, rgba(195, 210, 240, 0.3) 0%, transparent 50%); */
   background-attachment: fixed;
 }
 
@@ -121,6 +119,7 @@ a:hover { text-decoration-color: var(--color-text); }
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 1rem;
+  /* On desktop, PageHeader is fixed inside layout__main so no extra top padding needed */
 }
 
 /* ---- Selection ---- */
@@ -138,15 +137,20 @@ a:hover { text-decoration-color: var(--color-text); }
     height: auto;
     overflow: visible;
   }
+
+  /* Hide the sidebar entirely on mobile — navigation is handled by the
+     fixed PageHeader and the prev/next NavControls at the bottom */
   .layout__nav {
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
+    display: none;
   }
+
   .layout__main {
     height: auto;
     overflow-y: visible;
     scroll-snap-type: none;
+    /* Push content below the fixed PageHeader so nothing is obscured */
+    padding-top: calc(var(--header-height) + 0.5rem);
+    /* Keep a little bottom clearance so the NavControls bar doesn't overlap content */
+    padding-bottom: 5rem;
   }
 }

@@ -11,7 +11,7 @@
   padding: 1.25rem 3rem;
   flex-wrap: wrap;
   gap: 0.5rem;
-  background-color:  #FAF9F7 ;
+  background-color: #FAF9F7;
   background-attachment: fixed;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .me {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 1.35rem;
   font-weight: 500;
@@ -49,10 +49,148 @@
   opacity: 1;
 }
 
+/* ── Hamburger button — desktop: hidden ─────────────── */
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.menuBtn span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.menuBtn:hover {
+  border-color: var(--color-text);
+}
+
+/* Animate to X when open */
+.menuBtnOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.menuBtnOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menuBtnOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Mobile dropdown menu ─────────────────────────── */
+.mobileMenu {
+  display: none;   /* shown only on mobile via media query */
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  z-index: 49;
+  background: #FAF9F7;
+  border-bottom: 1px solid var(--color-border);
+  flex-direction: column;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+  /* Slide animation */
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.25s cubic-bezier(0.16,1,0.3,1),
+    opacity 0.2s ease;
+}
+
+.mobileMenuOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.mobileLink:hover {
+  color: var(--color-text);
+  background: var(--color-nav-bg);
+  text-decoration: none;
+}
+
+.mobileLinkActive {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.mobileLinkArrow {
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  transform: translateX(-4px);
+}
+
+.mobileLink:hover .mobileLinkArrow,
+.mobileLinkActive .mobileLinkArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Backdrop */
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 48;
+  background: rgba(0,0,0,0.15);
+}
+
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 768px) {
   .header {
     left: 0;
     padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: nowrap;
+  }
+
+  /* Hide the name text on very small screens to save space */
+  .headerName {
+    flex: 1;
+    text-align: center;
+    font-size: 0.78rem;
+  }
+
+  .menuBtn {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .backdrop {
+    display: block;
   }
 }

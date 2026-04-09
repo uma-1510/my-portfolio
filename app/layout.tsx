@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '../styles/globals.css'
 import Nav from '../components/Nav'
 import PageHeader from '../components/Pageheader'
+import NavControls from '../components/NavControls'
 
 export const metadata: Metadata = {
   title: {
@@ -25,6 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
         </div>
+        {/* Prev / Next navigation — outside the scroll container so it stays fixed */}
+        <NavControls />
       </body>
     </html>
   )
