@@ -1,79 +1,8 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import styles from './page.module.css'
-
-
-/* ── Typewriter ─────────────────────────────────────────── */
-// const ROLES = [
-//   'software engineer',
-//   'distributed systems',
-//   'AI + backend builder',
-//   'full-stack developer',
-// ]
-
-function TypeWriter({ words }: { words: string[] }) {
-  const [displayed, setDisplayed] = useState('')
-  const [wordIdx, setWordIdx]     = useState(0)
-  const [charIdx, setCharIdx]     = useState(0)
-  const [deleting, setDeleting]   = useState(false)
-
-  useEffect(() => {
-    const current = words[wordIdx]
-    let timeout: ReturnType<typeof setTimeout>
-
-    if (!deleting && charIdx < current.length) {
-      timeout = setTimeout(() => setCharIdx(i => i + 1), 72)
-    } else if (!deleting && charIdx === current.length) {
-      timeout = setTimeout(() => setDeleting(true), 2000)
-    } else if (deleting && charIdx > 0) {
-      timeout = setTimeout(() => setCharIdx(i => i - 1), 38)
-    } else {
-      setDeleting(false)
-      setWordIdx(i => (i + 1) % words.length)
-    }
-    setDisplayed(current.slice(0, charIdx))
-    return () => clearTimeout(timeout)
-  }, [charIdx, deleting, wordIdx, words])
-
-  return (
-    <span className={styles.typewriter}>
-      {displayed}
-      <span className={styles.cursor}>|</span>
-    </span>
-  )
-}
-
-/* ── Building ticker ────────────────────────────────────── */
-const BUILDING = [
-  'Software Engineer',
-  'Full Stack Developer',
-  'AI Engineer',
-]
-
-function BuildingTicker() {
-  const [idx, setIdx]       = useState(0)
-  const [visible, setVisible] = useState(true)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setVisible(false)
-      setTimeout(() => { setIdx(i => (i + 1) % BUILDING.length); setVisible(true) }, 320)
-    }, 3000)
-    return () => clearInterval(id)
-  }, [])
-
-  return (
-    <div className={styles.ticker}>
-      <span className={styles.tickerDot} />
-      {/* <span className={styles.tickerLabel}>building</span> */}
-      <span className={`${styles.tickerValue} ${visible ? styles.tickerIn : styles.tickerOut}`}>
-        {BUILDING[idx]}
-      </span>
-    </div>
-  )
-}
 
 /* ── Stagger variants ───────────────────────────────────── */
 const container = {
@@ -85,13 +14,13 @@ const item = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 }
 
+const ROLES = ['Software Engineer', 'Full Stack Developer', 'AI Engineer']
+
 /* ── Page ───────────────────────────────────────────────── */
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY }  = useScroll()
-
-  // very subtle parallax on the avatar
-  const avatarY = useTransform(scrollY, [0, 300], [0, -18])
+  const avatarY      = useTransform(scrollY, [0, 300], [0, -18])
 
   return (
     <div className={styles.page} ref={containerRef}>
@@ -105,7 +34,6 @@ export default function HomePage() {
         {/* ── LEFT COLUMN ─────────────────────────────── */}
         <div className={styles.left}>
 
-          {/* Avatar polaroid */}
           <motion.div variants={item} style={{ y: avatarY }}>
             <div className={styles.polaroid}>
               <div className={styles.polaroidInner}>
@@ -116,12 +44,6 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          {/* Building ticker */}
-          <motion.div variants={item}>
-            <BuildingTicker />
-          </motion.div>
-
-          {/* Social links — vertical stack */}
           <motion.div variants={item} className={styles.socials}>
             <a href="https://github.com/uma-1510" target="_blank" rel="noopener noreferrer"
                className={styles.socialLink} aria-label="GitHub">
@@ -162,26 +84,25 @@ export default function HomePage() {
         {/* ── RIGHT COLUMN ────────────────────────────── */}
         <div className={styles.right}>
 
-          {/* Status pill */}
           <motion.div variants={item} className={styles.statusPill}>
             <span className={styles.statusDot} />
             actively interviewing
           </motion.div>
 
-          {/* Name — the anchor */}
-          <motion.h1 variants={item} className={styles.name}>
-            Hello I'm<br />Uma Chinnam
-          </motion.h1>
+          <motion.div variants={item} className={styles.nameBlock}>
+            <p className={styles.hello}>
+              Hello I'm
+              <img
+                src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
+                alt="👋"
+                className={styles.helloGif}
+              />
+            </p>
+            <h1 className={styles.name}>Uma !</h1>
+          </motion.div>
 
-          {/* Role typewriter */}
-          {/* <motion.p variants={item} className={styles.role}> */}
-            {/* <TypeWriter words={ROLES} /> */}
-          {/* </motion.p> */}
-
-          {/* Divider */}
           <motion.div variants={item} className={styles.divider} />
 
-          {/* Bio — two tiers */}
           <motion.p variants={item} className={styles.bioLead}>
             I build systems that hold up when it matters — distributed infrastructure,
             AI-powered applications, and backends that scale.
@@ -193,10 +114,16 @@ export default function HomePage() {
             Currently in my final semester, looking for my first full-time role in tech.
           </motion.p>
 
-          {/* Handwritten aside */}
           <motion.p variants={item} className={styles.aside}>
             — since you're already here, feel free to stick around &amp; say hi 👋
           </motion.p>
+
+          {/* Roles — all three, static, bold, no fade */}
+          <motion.div variants={item} className={styles.rolesBox}>
+            {ROLES.map(role => (
+              <span key={role} className={styles.roleTag}>{role}</span>
+            ))}
+          </motion.div>
 
         </div>
       </motion.div>
