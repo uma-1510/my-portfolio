@@ -1,3 +1,4 @@
+/* ── Layout ─────────────────────────────────────────────────── */
 .page {
   display: flex;
   justify-content: center;
@@ -6,134 +7,188 @@
 
 .content {
   width: 100%;
-  max-width: 740px;
-  padding: 3.5rem 0 5rem;
+  max-width: 760px;
+  padding: 3.5rem 0 6rem;
 }
 
+/* ── Section utility ─────────────────────────────────────────── */
+.sectionLabel {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.sectionNote {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  font-style: italic;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+/* ── Hero ────────────────────────────────────────────────────── */
 .hero {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 0;
   border-bottom: 1px solid var(--color-border);
 }
 
-.title {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--color-text);
-  margin-bottom: 0.4rem;
-  line-height: 1.15;
-}
-
-.tagline {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--color-muted);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.meta {
-  display: flex;
+.heroBadge {
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.metaItem {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   font-family: var(--font-body);
   color: var(--color-muted);
-  background: var(--color-nav-bg);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  padding: 0.2rem 0.7rem;
+  padding: 0.3rem 0.85rem;
   border-radius: 20px;
-  font-style: italic;
+  margin-bottom: 1.5rem;
 }
 
-.metaDot {
-  color: var(--color-border);
-  font-size: 0.9rem;
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-success);
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.introBlock {
-  margin-bottom: 2.5rem;
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
 }
 
-.introBlock p {
-  font-size: 1.08rem;
-  line-height: 1.88;
+.heroTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.heroAccent {
+  /* underline with your yellow highlight color */
+  background: var(--hl-yellow);
+  padding: 0 6px 2px;
+}
+
+.heroSub {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-muted);
+  max-width: 620px;
+  margin-bottom: 2rem;
+}
+
+.heroCta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Statement ───────────────────────────────────────────────── */
+.statement {
+  border-left: 3px solid var(--color-text);
+  padding: 1.25rem 1.6rem;
+  margin: 3rem 0;
+  background: var(--color-surface);
+  border-radius: 0 10px 10px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.statement p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  font-style: italic;
   margin: 0;
 }
 
-.introBlock strong {
+.statement em {
+  font-style: normal;
   font-weight: 700;
-  color: var(--color-text);
+  background: var(--hl-yellow);
+  padding: 0 4px;
 }
 
-.sectionHeading {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 2.5rem 0 0.75rem;
-  letter-spacing: -0.015em;
-  position: relative;
-  padding-bottom: 0.5rem;
+/* ── Proof stats ──────────────────────────────────────────────── */
+.proofSection {
+  margin-bottom: 4rem;
 }
 
-.sectionIntro {
-  font-size: 0.98rem;
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.statCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.statNumber {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.statContext {
+  font-size: 0.76rem;
   color: var(--color-muted);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
   font-style: italic;
+  line-height: 1.6;
 }
 
-.tldr {
-  list-style: none;
+/* ── What I do cards ─────────────────────────────────────────── */
+.doCards {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.tldr li {
-  font-size: 1rem;
-  color: var(--color-text);
-  padding-left: 1.4rem;
-  position: relative;
-}
-
-.tldr li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--color-muted);
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.tldr li strong {
-  font-weight: 700;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  margin-bottom: 1rem;
-}
-
+/* Base card — starts invisible for animation */
 .card {
-  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
-  padding: 1.6rem 1.75rem 1.4rem;
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 14px rgba(0,0,0,0.05);
-
+  padding: 1.6rem 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
   opacity: 0;
   transform: translateY(18px);
   transition:
@@ -148,9 +203,7 @@
 }
 
 .card:hover {
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.05),
-    0 8px 24px rgba(0,0,0,0.09);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
@@ -158,26 +211,26 @@
   transform: translateY(18px);
 }
 
-.cardHead {
-  display: flex;
-  align-items: center;
+.doEmoji {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
 }
 
-.cardTitle {
-  font-family: var(--font);
-  font-size: 1.25rem;
-  font-weight: 600;
+.doTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--color-text);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  margin-top: 0rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
 }
 
-.cardBody {
-  font-size: 0.97rem;
-  line-height: 1.82;
-  color: #3a3a38;
-  margin: 0 0 1.1rem;
+.doBody {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
 }
 
 .tagRow {
@@ -193,70 +246,64 @@
   border: 1px solid var(--color-border);
   padding: 2px 8px;
   border-radius: 4px;
-  letter-spacing: 0.03em;
-  font-family: var(--font-body);
+  letter-spacing: 0.02em;
 }
 
-.expBlock {
-  margin-bottom: 1.5rem;
+/* ── What I want ─────────────────────────────────────────────── */
+.wantSection {
+  margin-bottom: 4rem;
 }
 
-.expSubhead {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 0.6rem;
-  margin-top: 1.75rem;
-}
-
-.expList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.wantList {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0;
 }
 
-.expList li {
-  font-size: 0.97rem;
-  line-height: 1.8;
-  color: var(--color-text);
-  padding-left: 1.2rem;
-  position: relative;
+.wantItem {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.expList li::before {
-  content: '·';
-  position: absolute;
-  left: 0;
-  color: var(--color-muted);
-  font-size: 1.2rem;
-  line-height: 1.55;
+.wantItem:first-child {
+  border-top: 1px solid var(--color-border);
 }
 
-.expList li strong {
+.wantNum {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
   font-weight: 700;
+  color: var(--color-border);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+.wantText {
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--color-text);
 }
 
+/* ── Eligibility ─────────────────────────────────────────────── */
 .eligibilityGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .eligCard {
   display: flex;
   gap: 0.85rem;
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1.2rem 1.3rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow-sm);
   align-items: flex-start;
 }
 
@@ -268,7 +315,7 @@
 }
 
 .eligTitle {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--color-text);
@@ -287,45 +334,42 @@
   font-weight: 600;
 }
 
-
-.cta {
-  margin-top: 3rem;
-  padding-top: 2rem;
+/* ── Final CTA ───────────────────────────────────────────────── */
+.finalCta {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
   border-top: 1px solid var(--color-border);
 }
 
-.cta > p {
-  font-size: 1.02rem;
-  line-height: 1.8;
-  color: var(--color-muted);
-  font-style: italic;
-  margin-bottom: 1.25rem;
+.finalCtaText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
 }
 
-.ctaLinks {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
+/* ── Buttons ─────────────────────────────────────────────────── */
 .ctaPrimary {
   display: inline-block;
   font-family: var(--font-body);
   font-size: 0.93rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-bg);
   background: var(--color-text);
-  padding: 0.6rem 1.3rem;
+  padding: 0.65rem 1.4rem;
   border-radius: 7px;
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .ctaPrimary:hover {
-  opacity: 0.85;
+  opacity: 0.82;
   transform: translateY(-1px);
   text-decoration: none;
-  color: #fff;
+  color: var(--color-bg);
 }
 
 .ctaSecondary {
@@ -333,24 +377,26 @@
   font-family: var(--font-body);
   font-size: 0.93rem;
   color: var(--color-text);
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  padding: 0.6rem 1.3rem;
+  padding: 0.65rem 1.4rem;
   border-radius: 7px;
   text-decoration: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .ctaSecondary:hover {
-  border-color: #bbb;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
   text-decoration: none;
   color: var(--color-text);
 }
 
+/* ── Mobile ──────────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .page             { padding: 0 1.25rem; }
+  .statsGrid        { grid-template-columns: 1fr; }
   .eligibilityGrid  { grid-template-columns: 1fr; }
-  .card             { padding: 1.25rem 1.35rem; }
+  .heroTitle        { font-size: 2.2rem; }
 }

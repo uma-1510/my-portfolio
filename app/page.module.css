@@ -1,159 +1,36 @@
 .page {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  justify-content: center;
   padding: 0 2rem;
-  position: relative;
 }
 
-/* Two-column hero */
 .hero {
-  position: relative;
-  z-index: 1;
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 4rem;
-  align-items: start;
-  padding: 6rem 0 5rem;
+  max-width: var(--content-max);
+  padding: 4.5rem 0 6rem;
 }
 
-/* ── LEFT column ──────────────────────────── */
-.left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  position: sticky;
-  top: 6rem;
-}
-
-/* Polaroid avatar */
-.polaroid {
-  position: relative;
-  background: #fff;
-  padding: 12px 12px 52px;
-  border: 1px solid var(--color-border);
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.06),
-    0 6px 24px rgba(0,0,0,0.08),
-    5px 5px 0 0 var(--color-border);
-  border-radius: 2px;
-  transform: rotate(-1.5deg);
-  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
-  cursor: default;
-}
-
-.polaroid:hover {
-  transform: rotate(0deg) scale(1.02);
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.08),
-    0 12px 36px rgba(0,0,0,0.12),
-    5px 5px 0 0 var(--color-border);
-}
-
-.polaroidInner {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: var(--color-nav-bg);
-}
-
-.polaroidImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.polaroidCaption {
-  position: absolute;
-  bottom: 14px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: var(--font-handwrite);
-  font-size: 0.92rem;
-  color: var(--color-muted);
-  letter-spacing: 0.01em;
-}
-
-/* Online dot on polaroid */
-.onlineDot {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 11px;
-  height: 11px;
-  background: #22c55e;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  animation: pulse 2.2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-  50%       { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
-}
-
-/* Social links — vertical */
-.socials {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.socialLink {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: 0.84rem;
-  color: var(--color-muted);
-  text-decoration: none;
-  padding: 0.35rem 0.5rem;
-  border-radius: 6px;
-  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-}
-
-.socialLink:hover {
-  color: var(--color-text);
-  background: rgba(0,0,0,0.03);
-  transform: translateX(3px);
-  text-decoration: none;
-}
-
-/* ── RIGHT column ─────────────────────────── */
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding-top: 0.5rem;
-}
-
-/* Status pill */
+/* ── Status pill ── */
 .statusPill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-style: italic;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--color-muted);
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 20px;
-  padding: 0.25rem 0.75rem;
-  margin-bottom: 1.4rem;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.75rem;
   width: fit-content;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .statusDot {
   width: 6px;
   height: 6px;
-  background: #22c55e;
+  background: var(--color-success);
   border-radius: 50%;
   animation: tickpulse 2s ease-in-out infinite;
 }
@@ -163,162 +40,172 @@
   50%       { opacity: 0.3; }
 }
 
-/* Hello line — small, above the name */
-.nameBlock {
-  margin: 0 0 1.2rem;
-}
-
-.hello {
-  font-family: var(--font-body);
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--color-muted);
-  margin: 0 0 0.15rem;
+/* ── Heading ── */
+.heading {
+  font-size: clamp(2.2rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  line-height: 1.4;
+  gap: 0.6rem;
+  margin: 0 0 1.1rem;
 }
 
-.helloGif {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  vertical-align: middle;
+.headingGif {
+  width: 34px;
+  height: 34px;
 }
 
-/* The name */
-.name {
-  font-family: var(--font-display);
-  font-size: clamp(3.2rem, 7vw, 5.5rem);
-  font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  color: var(--color-text);
-  margin: 0;
+/* ── Meta row ── */
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
 }
 
-/* Divider */
+.metaDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-muted);
+  flex-shrink: 0;
+}
+
+/* ── Divider ── */
 .divider {
-  width: 40px;
-  height: 2px;
+  width: 100%;
+  height: 1px;
   background: var(--color-border);
-  margin-bottom: 1.6rem;
-  border-radius: 2px;
+  margin-bottom: 2.5rem;
 }
 
-/* Bio — lead line */
-.bioLead {
-  font-family: var(--font-body);
-  font-size: 1.12rem;
-  line-height: 1.78;
+/* ── Section ── */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--color-text);
-  margin: 0 0 0.9rem;
-  font-weight: 500;
+  margin: 0 0 1.25rem;
 }
 
-/* Bio — body */
-.bioBody {
-  font-family: var(--font-body);
-  font-size: 0.97rem;
-  line-height: 1.82;
-  color: var(--color-muted);
-  margin: 0 0 1.4rem;
-}
-
-/* Handwritten aside */
-.aside {
-  font-family: var(--font-handwrite);
+.bioLead {
   font-size: 1.05rem;
-  color: var(--color-muted);
-  margin: 0 0 1.6rem;
-  padding: 0.6rem 1rem;
-  background: #fffdf5;
-  border-left: 3px solid var(--hl-yellow);
-  border-radius: 0 6px 6px 0;
-  line-height: 1.5;
-  transform: rotate(-0.3deg);
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0 0 1rem;
 }
 
-/* Roles box — all three visible, bold, no animation */
+.bioBody {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+  margin: 0 0 1rem;
+}
+
 .rolesBox {
   display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
 }
 
 .roleTag {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--color-text);
-  background: #fff;
-  border: 1.5px solid var(--color-border);
-  border-radius: 6px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   padding: 0.4rem 0.9rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
-/* ── Mobile ───────────────────────────────── */
-@media (max-width: 768px) {
-  .page {
-    padding: 0 1.25rem;
-    align-items: flex-start;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 0 5rem;
-  }
-
-  .left {
-    position: static;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .polaroid {
-    width: 160px;
-    flex-shrink: 0;
-  }
-
-  .socials {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    width: 100%;
-  }
-
-  .socialLink span {
-    display: none;
-  }
-
-  .name {
-    font-size: clamp(2.6rem, 10vw, 3.8rem);
-    margin-bottom: 0.9rem;
-  }
-
-  .rolesBox {
-    gap: 0.4rem;
-  }
-
-  .roleTag {
-    font-size: 0.85rem;
-    padding: 0.35rem 0.75rem;
-  }
+/* ── CTA card ── */
+.ctaCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
-@media (max-width: 420px) {
-  .left {
-    flex-direction: column;
-  }
-  .polaroid {
-    width: 100%;
-  }
+.ctaTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.75rem;
+}
+
+.ctaBody {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--color-muted);
+  margin: 0 0 1.5rem;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  background: var(--color-text);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.ctaButton:hover {
+  opacity: 0.85;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* ── Socials row ── */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: none;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.socialLink:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .page { padding: 0 1.25rem; }
+  .hero { padding: 2rem 0 4rem; }
+  .ctaCard { padding: 1.5rem; }
 }

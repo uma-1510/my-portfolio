@@ -22,9 +22,9 @@ const LINES = [
   { delay: 3700, type: 'success', text: '✓ Dean\'s Scholar, Clark University MS CS' },
   { delay: 3900, type: 'blank',   text: '' },
   { delay: 4000, type: 'output',  text: 'Opening contact channels...' },
-  { delay: 4500, type: 'link',    text: 'EMAIL        mailto:[YOUR_EMAIL]',       href: 'mailto:[YOUR_EMAIL]' },
-  { delay: 4700, type: 'link',    text: 'LINKEDIN     linkedin.com/in/[YOUR_HANDLE]', href: 'https://linkedin.com/in/[YOUR_HANDLE]' },
-  { delay: 4900, type: 'link',    text: 'RESUME       /resume.pdf',               href: '/resume.pdf' },
+  { delay: 4500, type: 'link',    text: 'EMAIL        umach1503@gmail.com',       href: 'mailto:umach1503@gmail.com' },
+  { delay: 4700, type: 'link',    text: 'LINKEDIN     linkedin.com/in/uma-chinnam-ab030320b', href: 'https://www.linkedin.com/in/uma-chinnam-ab030320b/' },
+  { delay: 4900, type: 'link',    text: 'RESUME       /resume.docx',              href: '/resume.docx' },
   { delay: 5100, type: 'blank',   text: '' },
   { delay: 5200, type: 'prompt',  text: '' },
 ]

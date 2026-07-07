@@ -40,7 +40,7 @@ export default function BlogPage() {
         <p className={styles.cta}>
           Until then —{' '}
           <a
-            href="https://linkedin.com/in/[YOUR_LINKEDIN]"
+            href="https://www.linkedin.com/in/uma-chinnam-ab030320b/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.linkedinLink}

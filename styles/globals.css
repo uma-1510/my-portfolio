@@ -1,15 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@400;500;600&display=swap');
 
 :root {
+  --font-sans:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display:    'Lora', Georgia, serif;
-  --font-body:       'Source Serif 4', Georgia, serif;
+  --font-body:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-handwrite:  'Caveat', cursive;
-
-  --color-bg:        #faf8f5;
-  --color-text:      #1a1a18;
-  --color-muted:     #6b6b67;
-  --color-border:    #e2e0d8;
-  --color-nav-bg:    #f0ede6;
 
   --hl-yellow:       #e8d84a;
   --hl-mint:         #7ee8a2;
@@ -18,16 +13,53 @@
   --hl-lavender:     #b87df0;
   --hl-peach:        #f0b87d;
 
-  --nav-width:       260px;
-  --content-max:     700px;
-  --content-pad:     3rem;
+  --color-success:   #3ddc84;
+  --color-accent:    #7c9cff;
 
-  /* Height of the fixed PageHeader — used to offset content below it */
+  --nav-width:       272px;
+  --content-max:     720px;
+  --content-pad:     3rem;
   --header-height:   64px;
+  --radius-sm:       8px;
+  --radius-md:       14px;
+  --radius-lg:       20px;
 
   --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast:   0.2s;
   --duration-base:   0.4s;
+}
+
+/* ── Dark theme (default) — calm, near-black, premium ─────────── */
+:root,
+[data-theme='dark'] {
+  --color-bg:          #0c0d0f;
+  --color-bg-alt:      #0f1012;
+  --color-surface:     #17181b;
+  --color-surface-hi:  #1e1f23;
+  --color-text:        #eeeeec;
+  --color-muted:       #98999e;
+  --color-border:      #2a2b30;
+  --color-nav-bg:      #0c0d0f;
+  --shadow-sm:         0 1px 2px rgba(0,0,0,0.35);
+  --shadow-md:         0 8px 24px rgba(0,0,0,0.45);
+  --shadow-lg:         0 16px 48px rgba(0,0,0,0.55);
+  color-scheme: dark;
+}
+
+/* ── Light theme — soft paper, same calm structure ────────────── */
+[data-theme='light'] {
+  --color-bg:          #f7f7f5;
+  --color-bg-alt:      #f1f1ee;
+  --color-surface:     #ffffff;
+  --color-surface-hi:  #fbfbfa;
+  --color-text:        #1a1a18;
+  --color-muted:       #6c6c68;
+  --color-border:      #e4e3de;
+  --color-nav-bg:      #f7f7f5;
+  --shadow-sm:         0 1px 2px rgba(20,20,15,0.05);
+  --shadow-md:         0 8px 24px rgba(20,20,15,0.07);
+  --shadow-lg:         0 16px 48px rgba(20,20,15,0.10);
+  color-scheme: light;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,25 +74,25 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--color-text);
-  line-height: 1.75;
+  background-color: var(--color-bg);
+  line-height: 1.7;
   min-height: 100vh;
-  background-color:  #FAF9F7 ;
-  background-attachment: fixed;
+  transition: background-color var(--duration-base) var(--ease-out), color var(--duration-base) var(--ease-out);
 }
 
 /* ---- Typography ---- */
 h1 {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 600;
-  line-height: 1.25;
+  font-family: var(--font-sans);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -69,17 +101,18 @@ h2 {
 }
 
 h3 {
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 1.15rem;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   margin-top: 2rem;
 }
 
 p {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.8;
   margin-bottom: 1.25rem;
+  color: var(--color-text);
 }
 
 a {
@@ -87,10 +120,10 @@ a {
   text-decoration: underline;
   text-decoration-color: var(--color-border);
   text-underline-offset: 3px;
-  transition: text-decoration-color var(--duration-fast) ease;
+  transition: text-decoration-color var(--duration-fast) ease, color var(--duration-fast) ease;
 }
 
-a:hover { text-decoration-color: var(--color-text); }
+a:hover { text-decoration-color: var(--color-accent); }
 
 /* ---- Layout ---- */
 .layout {
@@ -116,14 +149,13 @@ a:hover { text-decoration-color: var(--color-text); }
   flex: 1;
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 1rem;
-  /* On desktop, PageHeader is fixed inside layout__main so no extra top padding needed */
+  background: var(--color-bg);
 }
 
 /* ---- Selection ---- */
-::selection { background: var(--hl-yellow); color: var(--color-text); }
+::selection { background: var(--color-accent); color: #0c0d0f; }
 
 /* ---- Scrollbar (on main panel) ---- */
 .layout__main::-webkit-scrollbar        { width: 5px; }
@@ -138,19 +170,18 @@ a:hover { text-decoration-color: var(--color-text); }
     overflow: visible;
   }
 
-  /* Hide the sidebar entirely on mobile — navigation is handled by the
-     fixed PageHeader and the prev/next NavControls at the bottom */
   .layout__nav {
-    display: none;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    overflow: visible;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .layout__main {
     height: auto;
     overflow-y: visible;
-    scroll-snap-type: none;
-    /* Push content below the fixed PageHeader so nothing is obscured */
-    padding-top: calc(var(--header-height) + 0.5rem);
-    /* Keep a little bottom clearance so the NavControls bar doesn't overlap content */
     padding-bottom: 5rem;
   }
 }

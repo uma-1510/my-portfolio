@@ -3,7 +3,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import styles from './about.module.css'
-import PageHeader from '../../components/Pageheader'
 import H from '../../components/Highlight'
 
 /* ── animation presets ───────────────────────── */
@@ -115,7 +114,6 @@ export default function AboutPage() {
   return (
     <div className={styles.page}>
       <div className={styles.content}>
-        <PageHeader />
 
         {/* ── HERO ───────────────────────────── */}
         <Section>

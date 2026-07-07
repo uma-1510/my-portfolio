@@ -1,9 +1,44 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import type { Metadata } from 'next'
+import { useEffect, useRef, useState } from 'react'
 import styles from './hire.module.css'
 
+/* ── CountUp animation ─────────────────────────────────────── */
+function CountUp({ to, suffix = '', prefix = '' }: { to: number; suffix?: string; prefix?: string }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting && !started.current) {
+          started.current = true
+          let start = 0
+          const steps = 50
+          const increment = to / steps
+          const interval = 1200 / steps
+          const timer = setInterval(() => {
+            start += increment
+            if (start >= to) {
+              setCount(to)
+              clearInterval(timer)
+            } else {
+              setCount(Math.floor(start))
+            }
+          }, interval)
+        }
+      },
+      { threshold: 0.3 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [to])
+
+  return <span ref={ref}>{prefix}{count}{suffix}</span>
+}
+
+/* ── Animated scroll-in card ───────────────────────────────── */
 function AnimCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -30,181 +65,170 @@ function AnimCard({ children, delay = 0 }: { children: React.ReactNode; delay?: 
   )
 }
 
-const WHAT_YOU_CAN_DO = [
+/* ── Data ───────────────────────────────────────────────────── */
+const PROOF_STATS = [
   {
-    title: 'Full stack',
-    body: `I am proficient in multiple programming languages (such as JavaScript & variants, Go, and Python, on top of knowing Java and PHP) and various web frameworks (such as Next.js & React & friends, Django & Flask & FastAPI, etc.). I have also worked with relational (SQLite, PostgreSQL and MySQL) and document (MongoDB & variants) databases, as well as AWS and Google Cloud environments. I often apply various best practices, including REST APIs and caching, as well as DevOps (especially CI/CD). Often I do development work as part of a larger system.`,
-    tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker', 'CI/CD'],
+    number: 40,
+    suffix: '%',
+    label: 'reduction in data processing time',
+    context: 'HCL Software · Spark ETL on AWS · 10,000+ enterprise endpoints',
   },
   {
-    title: 'AI & Intelligent Systems',
-    body: `I have hands-on experience building GenAI-powered applications - not just calling APIs, but designing systems around them. I built a RAG-powered AI assistant using LangChain, worked on deep fake detection research, and built a medical Q&A assistant with FAISS vector search and semantic caching. I understand how to make AI work in production: grounded, efficient, and reliable.`,
-    tags: ['LangChain', 'RAG', 'FAISS', 'TensorFlow', 'Gemini', 'Sentence-Transformers', 'Prompt Engineering'],
+    number: 93,
+    suffix: '%',
+    label: 'unit test coverage',
+    context: 'Quinbay · 25+ REST APIs across 5 microservices',
   },
   {
-    title: 'Data Engineering & Pipelines',
-    body: `On top of backend skills, I have real production experience with distributed data infrastructure. I designed Spark ETL pipelines on AWS, integrated Kafka for event-driven architectures, and used ElasticSearch for large-scale search.`,
-    tags: ['Apache Spark', 'Apache Kafka', 'ElasticSearch', 'ETL', 'AWS', 'Prometheus', 'CloudWatch'],
+    number: 70,
+    suffix: '%',
+    label: 'cut in AI API costs',
+    context: 'RAG Medical Assistant · FAISS + semantic caching',
+  },
+  {
+    number: 5,
+    suffix: '%',
+    prefix: 'top ',
+    label: 'Java certification',
+    context: 'Out of ~60,000 participants · That\'s when I knew.',
   },
 ]
 
+const WHAT_I_DO = [
+  {
+    emoji: '⚙️',
+    title: 'Backend & Distributed Systems',
+    body: `I have shipped real distributed infrastructure — a consistent hash ring task queue with heartbeat-based failure detection, Spark ETL pipelines processing telemetry from 10,000+ endpoints, and Kafka-based event systems in production. This is not classroom knowledge. I have seen these systems fail and I have fixed them.`,
+    tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
+  },
+  {
+    emoji: '🤖',
+    title: 'AI & GenAI in Production',
+    body: `I have built GenAI applications that actually work in production — not just API wrappers. A RAG-powered internal assistant at HCL using LangChain. A medical Q&A system with FAISS vector search and hallucination guardrails. Semantic caching that cut costs 70%. I understand the gap between "it works in a notebook" and "it works at scale."`,
+    tags: ['LangChain', 'RAG', 'FAISS', 'Sentence-Transformers', 'Gemini', 'Prompt Engineering'],
+  },
+  {
+    emoji: '☁️',
+    title: 'Cloud Infrastructure & DevOps',
+    body: `I manage the whole lifecycle — not just the code. Zero-downtime EC2 deployments via CodeDeploy. Terraform-managed infra. CI/CD pipelines with automated testing. Observability with Prometheus and CloudWatch. I care about what happens after the merge.`,
+    tags: ['AWS', 'Docker', 'Terraform', 'CI/CD', 'Prometheus', 'CloudWatch', 'CodeDeploy'],
+  },
+]
+
+const WHAT_I_WANT = [
+  'A team that argues about the right way to do things — because they actually care.',
+  'Problems where the stakes are real. Systems that people depend on.',
+  'Engineers I can learn from. I am not the smartest person in any room and I am fine with that.',
+  'A place where good work is noticed — not just shipped and forgotten.',
+]
+
+/* ── Page ───────────────────────────────────────────────────── */
 export default function HireMePage() {
   return (
     <div className={styles.page}>
       <div className={styles.content}>
 
-        
+        {/* ── HERO ── */}
         <div className={styles.hero}>
-          <h1 className={styles.title}>Hire me!</h1>
-          <p className={styles.tagline}>
-            Interested in hiring me? Read here to see what I can do!
+          <div className={styles.heroBadge}>
+            <span className={styles.pulseDot} />
+            Actively interviewing · Available immediately
+          </div>
+          <h1 className={styles.heroTitle}>
+            I ship things<br />
+            <span className={styles.heroAccent}>that stay shipped.</span>
+          </h1>
+          <p className={styles.heroSub}>
+            I have built distributed systems at enterprise scale, RAG-powered AI tools
+            that work in production, and APIs that real users in Indonesia depended on
+            every day. I am a new grad with the mentality of someone who has already
+            been in the fire.
           </p>
-          <div className={styles.meta}>
-            <span className={styles.metaItem}>Actively interviewing</span>
-            <span className={styles.metaDot}>·</span>
-            <span className={styles.metaItem}>Available immediately</span>
+          <div className={styles.heroCta}>
+            <a href="/contact" className={styles.ctaPrimary}>Let's talk →</a>
+            <a href="/resume.docx" download className={styles.ctaSecondary}>Download resume</a>
           </div>
         </div>
 
-       
-        <div className={styles.introBlock}>
+        {/* ── STATEMENT ── */}
+        <div className={styles.statement}>
           <p>
-            Thank you for your interest! I am actively looking for a{' '}
-            <strong>new grad / entry-level software engineering role</strong>{' '}
-            and available to start <strong>immediately</strong>. I have built real systems
-            at multiple companies across data engineering, distributed infrastructure, and
-            AI and I am ready to learn more and contribute to the team and help you achieve your goals!
+            I am not looking for a company to take a chance on me.
+            I am looking for a team where I can do the <em>best work of my life.</em>
           </p>
         </div>
 
-     
-        <h2 className={styles.sectionHeading}>TL;DR</h2>
-        <ul className={styles.tldr}>
-          <li>
-            <strong>Quick, self-directed learner.</strong> I have picked up new languages,
-            frameworks, and tools on the fly across every role I have held. Always curious about new technical solutions.
-          </li>
-          <li>
-            <strong>Full-stack development </strong> I am proficient
-            in Java, Python, JS/TS and familiar with Go.
-            Good at databse technologies and implemented them in production like cachine and indexing.
-          </li>
-          <li>
-            <strong>Distributed systems and data engineering experience.</strong> I have
-            shipped Spark ETL pipelines, Kafka-based event systems, and RAG-powered AI
-            assistants in real production environments. Not just classroom knowledge.
-          </li>
-          <li>
-            I understand the full deployment lifecycle and have experience with <strong>CI/CD and dockerization</strong>, 
-            as well as deploying in both traditional UNIX and cloud "serverless" environments.
-          </li>
-        </ul>
-
-        {/* ---- What can I do ---- */}
-        <h2 className={styles.sectionHeading}>What can you do?</h2>
-        <p className={styles.sectionIntro}>
-          These areas are not siloed — most of my best work sits at the intersection of several.
-          I am <em>up to the challenge</em> of combining them.
-        </p>
-
-        <div className={styles.cards}>
-          {WHAT_YOU_CAN_DO.map(({ title, body, tags }, i) => (
-            <AnimCard key={title} delay={i * 80}>
-              <div className={styles.cardHead}>
-                <h3 className={styles.cardTitle}>{title}</h3>
+        {/* ── PROOF STATS ── */}
+        <div className={styles.proofSection}>
+          <p className={styles.sectionLabel}>Real numbers. Real work.</p>
+          <div className={styles.statsGrid}>
+            {PROOF_STATS.map((s, i) => (
+              <div key={i} className={styles.statCard}>
+                <div className={styles.statNumber}>
+                  <CountUp to={s.number} suffix={s.suffix} prefix={s.prefix} />
+                </div>
+                <div className={styles.statLabel}>{s.label}</div>
+                <div className={styles.statContext}>{s.context}</div>
               </div>
-              <p className={styles.cardBody}>{body}</p>
-              <div className={styles.tagRow}>
-                {tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}
-              </div>
-            </AnimCard>
-          ))}
-        </div>
-
-        {/* ---- More about my experience ----
-        <h2 className={styles.sectionHeading}>More about my experience</h2>
-
-        <div className={styles.expBlock}>
-          <h3 className={styles.expSubhead}>Engineering</h3>
-          <ul className={styles.expList}>
-            <li>
-              At <strong>HCL Software</strong>, I was part of the BigFix Data Analytics team
-              — designing Spark ETL pipelines on AWS, building a RAG-powered AI assistant
-              using LangChain, and shipping containerised Python microservices with full
-              observability (CloudWatch + Prometheus). Real enterprise scale, real ownership.
-            </li>
-            <li>
-              At <strong>Quinbay Technologies</strong>, I built 25+ REST APIs across 5
-              microservices for an Indonesian e-commerce platform — achieving 93% test coverage,
-              integrating Kafka and Solr, and shipping flash sale features that users depended on.
-            </li>
-            <li>
-              My <strong>research at Clark University</strong> involved benchmarking deep fake
-              detection models against real-world constraints alongside Professor Rand Alfaris —
-              the kind of rigorous, cross-disciplinary work that sharpens both technical and
-              analytical thinking.
-            </li>
-          </ul>
-        </div> */}
-
-        <div className={styles.expBlock}>
-          <h3 className={styles.expSubhead}>Projects</h3>
-          <ul className={styles.expList}>
-            <li>
-              Built a <strong>distributed task queue</strong> with consistent hash ring routing
-              and heartbeat-based failure detection — zero task loss under node failure.
-            </li>
-            <li>
-              Built a <strong>RAG-powered medical assistant</strong> with FAISS vector search
-              and semantic caching — 70% reduction in API costs, with hallucination guardrails.
-            </li>
-            <li>
-              Built an <strong>async job manager platform</strong> with 5-state lifecycle
-              management, mid-execution cancellation, and real-time stdout/stderr streaming
-              on AWS EC2 with Terraform-managed infra.
-            </li>
-          </ul>
-        </div>
-
-        {/* ---- Location & Eligibility ---- */}
-        <h2 className={styles.sectionHeading}>Location & Work Eligibility</h2>
-
-        <div className={styles.eligibilityGrid}>
-          <div className={styles.eligCard}>
-            <span className={styles.eligFlag}>🇺🇸</span>
-            <div>
-              <p className={styles.eligTitle}>United States</p>
-              <p className={styles.eligBody}>
-                Authorised to work on <strong>OPT + STEM extension</strong> (up to 3 years)
-                immediately. No sponsorship needed to start. Eligible for H-1B sponsorship
-                thereafter. There is no need for the employer to pay $100,000 fee to sponsor 
-                my H1B since I am transitioning from F1 to H1B.
-              </p>
-            </div>
+            ))}
           </div>
-          <div className={styles.eligCard}>
-            <span className={styles.eligFlag}>📍</span>
-            <div>
-              <p className={styles.eligTitle}>Location Preference</p>
-              <p className={styles.eligBody}>
-                Based in Boston. Open to roles anywhere in the U.S. with reasonable relocation
-                time. Open to hybrid or in-office.
-              </p>
+        </div>
+
+        {/* ── WHAT I DO ── */}
+        <div className={styles.section}>
+          <p className={styles.sectionLabel}>What I actually do</p>
+          <p className={styles.sectionNote}>
+            These are not separate tracks. My best work lives at the intersection of all three.
+          </p>
+          <div className={styles.doCards}>
+            {WHAT_I_DO.map(({ emoji, title, body, tags }, i) => (
+              <AnimCard key={title} delay={i * 100}>
+                <div className={styles.doEmoji}>{emoji}</div>
+                <h3 className={styles.doTitle}>{title}</h3>
+                <p className={styles.doBody}>{body}</p>
+                <div className={styles.tagRow}>
+                  {tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}
+                </div>
+              </AnimCard>
+            ))}
+          </div>
+        </div>
+
+        {/* ── ELIGIBILITY ── */}
+        <div className={styles.section}>
+          <p className={styles.sectionLabel}>Work eligibility</p>
+          <div className={styles.eligibilityGrid}>
+            <div className={styles.eligCard}>
+              <span className={styles.eligFlag}>🇺🇸</span>
+              <div>
+                <p className={styles.eligTitle}>Authorized to work immediately</p>
+                <p className={styles.eligBody}>
+                  On <strong>OPT + STEM extension</strong> — up to 3 years, no sponsorship needed to start.
+                  Eligible for H-1B thereafter.
+                </p>
+              </div>
+            </div>
+            <div className={styles.eligCard}>
+              <span className={styles.eligFlag}>📍</span>
+              <div>
+                <p className={styles.eligTitle}>Based in Boston</p>
+                <p className={styles.eligBody}>
+                  Open to roles anywhere in the U.S. I believe being young is the best time
+                  to move somewhere new. Hybrid or in-office, I am in.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ---- CTA ---- */}
-        <div className={styles.cta}>
-          <p>
-            I am actively interviewing. Do not hesitate to reach out, I would love to
-            learn more about what your team is building.
+        {/* ── FINAL CTA ── */}
+        <div className={styles.finalCta}>
+          <p className={styles.finalCtaText}>
+            If your team is building something worth caring about — I want to hear about it.
           </p>
-          <div className={styles.ctaLinks}>
+          <div className={styles.heroCta}>
             <a href="/contact" className={styles.ctaPrimary}>Get in touch →</a>
-            <a href="/resume.docx" target="_blank" rel="noopener noreferrer" className={styles.ctaSecondary}>
-              Download resume
-            </a>
+            <a href="/work" className={styles.ctaSecondary}>See my experience</a>
           </div>
         </div>
 

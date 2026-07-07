@@ -109,42 +109,42 @@ const PROJECTS = [
     emoji:  '📄',
     desc:   'A browser extension that reads a live job posting and instantly rewrites your resume to match it — 100% client-side, no data ever leaves your machine. Built for job seekers who are tired of tailoring resumes manually.',
     tech:   ['Node.js', 'React', 'LLMs', 'DOCX generation'],
-    github: 'https://github.com/[YOUR_HANDLE]/resume-os',
+    github: 'https://github.com/uma-1510/resume-os',
   },
   {
     title:  'RAG-Powered Medical Assistant',
     emoji:  '🏥',
     desc:   'A full-stack medical Q&A assistant that retrieves grounded answers from a document corpus using FAISS vector search. Semantic caching cuts API costs by 70% and guardrails prevent hallucinations in a healthcare context.',
     tech:   ['FastAPI', 'React', 'FAISS', 'Sentence-Transformers', 'Gemini'],
-    github: 'https://github.com/[YOUR_HANDLE]/rag-medical-assistant',
+    github: 'https://github.com/uma-1510/rag-medical-assistant',
   },
   {
     title:  'Distributed Task Queue',
     emoji:  '⚙️',
     desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies — zero task loss under failure.',
     tech:   ['Python', 'gRPC', 'Redis', 'PostgreSQL', 'REST API'],
-    github: 'https://github.com/[YOUR_HANDLE]/distributed-task-queue',
+    github: 'https://github.com/uma-1510/distributed-task-queue',
   },
   {
     title:  'Async Job Manager Platform',
     emoji:  '🚀',
     desc:   'A Python/FastAPI async execution platform with a 5-state job lifecycle, mid-execution cancellation, and real-time stdout/stderr streaming. Zero-downtime EC2 deployments via CodeDeploy and Terraform-managed infra.',
     tech:   ['FastAPI', 'AWS EC2', 'CodeDeploy', 'Terraform', 'OpenAPI'],
-    github: 'https://github.com/[YOUR_HANDLE]/async-job-manager',
+    github: 'https://github.com/uma-1510/async-job-manager',
   },
   {
     title:  'Database Backup Utility CLI',
     emoji:  '🗃️',
     desc:   'A modular CLI supporting 4 database types via an adapter pattern, with SHA-256 checksum validation, gzip compression, structured logging, and S3 cloud storage. Reduces database-specific code dependency by 60%.',
     tech:   ['Python', 'AWS S3', 'CLI', 'PostgreSQL', 'MongoDB'],
-    github: 'https://github.com/[YOUR_HANDLE]/db-backup-cli',
+    github: 'https://github.com/uma-1510/db-backup-cli',
   },
   {
     title:  'Sign Language Detection',
     emoji:  '🤟',
     desc:   'A CNN-based gesture recognition system that captures real-time webcam input and classifies hand gestures into 10 classes. Reached 99%+ training accuracy within 5 epochs using TensorFlow/Keras.',
     tech:   ['Python', 'TensorFlow', 'CNN', 'OpenCV'],
-    github: 'https://github.com/[YOUR_HANDLE]/sign-language-detection',
+    github: 'https://github.com/uma-1510/sign-language-detection',
   },
 ]
 
@@ -177,7 +177,7 @@ export default function ProjectsPage() {
         <div className={styles.projectsHeader}>
           <p className={styles.sectionLabel} style={{ margin: 0 }}>Selected Projects</p>
           <a
-            href="https://github.com/[YOUR_HANDLE]"
+            href="https://github.com/uma-1510"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.githubLink}

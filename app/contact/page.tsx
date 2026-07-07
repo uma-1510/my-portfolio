@@ -6,12 +6,10 @@ import styles from './contact.module.css'
 
 
 const LINKS = [
-  { emoji: '✉️', label: 'Email',    href: 'mailto:[YOUR_EMAIL]' },
-  { emoji: '💼', label: 'LinkedIn', href: 'https://linkedin.com/in/[YOUR_LINKEDIN]' },
-  { emoji: '🐙', label: 'GitHub',   href: 'https://github.com/[YOUR_GITHUB]' },
-  { emoji: '📄', label: 'Résumé',   href: '/resume.pdf' },
-  { emoji: '✍️', label: 'Medium',   href: 'https://medium.com/@[YOUR_MEDIUM]' },
-  { emoji: '🧩', label: 'LeetCode', href: 'https://leetcode.com/[YOUR_LEETCODE]' },
+  { emoji: '✉️', label: 'Email',    href: 'mailto:umach1503@gmail.com' },
+  { emoji: '💼', label: 'LinkedIn', href: 'https://www.linkedin.com/in/uma-chinnam-ab030320b/' },
+  { emoji: '🐙', label: 'GitHub',   href: 'https://github.com/uma-1510' },
+  { emoji: '📄', label: 'Résumé',   href: '/resume.docx' },
 ]
 
 export default function ContactPage() {
@@ -44,13 +42,13 @@ export default function ContactPage() {
 
         <p className={styles.body}>
           The best way to reach me is directly —{' '}
-          <a href="mailto:[YOUR_EMAIL]">
-            <H color="yellow">[YOUR_EMAIL]</H>
+          <a href="mailto:umach1503@gmail.com">
+            <H color="yellow">umach1503@gmail.com</H>
           </a>
           . I am very active and usually respond within a few hours.
           You can also reach out on{' '}
           <a
-            href="https://linkedin.com/in/[YOUR_LINKEDIN]"
+            href="https://www.linkedin.com/in/uma-chinnam-ab030320b/"
             target="_blank"
             rel="noopener noreferrer"
           >

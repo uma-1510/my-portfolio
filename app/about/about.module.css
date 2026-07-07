@@ -102,13 +102,13 @@
 }
 
 .photoFrame {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   padding: 0.6rem 0.6rem 2rem;
   border-radius: 4px;
   flex: 1;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-sm);
   position: relative;
 }
 
@@ -160,7 +160,7 @@
 .body {
   font-size: 1.02rem;
   line-height: 1.82;
-  color: #3a3a38;
+  color: var(--color-muted);
   margin-bottom: 1rem;
 }
 
@@ -169,16 +169,16 @@
   border-left: 3px solid var(--color-text);
   margin: 1.5rem 0;
   padding: 1rem 1.4rem;
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 0 8px 8px 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow-sm);
 }
 
 .pullQuote p,
 .pullQuote {
   font-size: 1.04rem;
   line-height: 1.8;
-  color: #3a3a38;
+  color: var(--color-muted);
   font-style: italic;
   margin: 0;
 }
