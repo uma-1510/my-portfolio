@@ -26,11 +26,11 @@ const iconProps = {
 const NAV_LINKS: NavLink[] = [
   {
     href: '/', label: 'Home',
-    icon: <svg {...iconProps}><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5" /></svg>,
+    icon: <svg {...iconProps}><path d="M20 13c0 5-3.5 7.5-7.35 8.95a1 1 0 0 1-.6.01C8.5 20.5 5 18 5 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C15.51 3.81 18 5 20 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg>,
   },
   {
     href: '/about', label: 'About',
-    icon: <svg {...iconProps}><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 4-6 8-6s8 2 8 6" /></svg>,
+    icon: <svg {...iconProps}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
   },
   {
     href: '/hire', label: 'Hire Me',
@@ -38,11 +38,11 @@ const NAV_LINKS: NavLink[] = [
   },
   {
     href: '/work', label: 'Work',
-    icon: <svg {...iconProps}><rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" /></svg>,
+    icon: <svg {...iconProps}><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" /></svg>,
   },
   {
     href: '/projects', label: 'Projects',
-    icon: <svg {...iconProps}><polyline points="8 6 2 12 8 18" /><polyline points="16 6 22 12 16 18" /></svg>,
+    icon: <svg {...iconProps}><path d="M10 2v2M14 2v2" /><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /></svg>,
   },
   {
     href: '/blog', label: 'Blog',
@@ -50,7 +50,7 @@ const NAV_LINKS: NavLink[] = [
   },
   {
     href: '/contact', label: 'Contact',
-    icon: <svg {...iconProps}><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>,
+    icon: <svg {...iconProps}><path d="m21.854 2.147-10.94 10.939" /><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /></svg>,
   },
 ]
 
