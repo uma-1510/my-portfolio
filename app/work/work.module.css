@@ -165,12 +165,12 @@
 
 .hint {
   font-size: 0.71rem;
-  color: var(--color-border);
+  color: var(--color-muted);
   font-style: italic;
   margin-top: 0.3rem;
   transition: color 0.2s ease;
 }
-.cardBtn:hover .hint { color: var(--color-muted); }
+.cardBtn:hover .hint { color: var(--color-text); }
 
 .panel {
   overflow: hidden;

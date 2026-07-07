@@ -144,7 +144,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-border);
+  color: var(--color-muted);
   margin-bottom: 1rem;
   margin-top: 3.5rem;
 }
