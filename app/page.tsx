@@ -44,12 +44,7 @@ export default function HomePage() {
         </motion.div>
 
         <motion.h1 variants={item} className={styles.heading}>
-          Hi, I&apos;m Uma
-          <img
-            src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
-            alt="👋"
-            className={styles.headingGif}
-          />
+          Hi, I&apos;m Uma <span className={styles.wave}>👋</span>
         </motion.h1>
 
         <motion.div variants={item} className={styles.metaRow}>

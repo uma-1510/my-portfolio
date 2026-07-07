@@ -46,15 +46,19 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--color-text);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
   margin: 0 0 1.1rem;
 }
 
-.headingGif {
-  width: 34px;
-  height: 34px;
+.wave {
+  display: inline-block;
+  animation: waveHand 2.4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes waveHand {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30%      { transform: rotate(14deg); }
+  20%, 40%      { transform: rotate(-8deg); }
 }
 
 /* ── Meta row ── */
