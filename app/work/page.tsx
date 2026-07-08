@@ -36,7 +36,7 @@ const ENTRIES: Entry[] = [
     role: 'Master of Science, Computer Science',
     badgeLabel: "Dean's Scholar",
     badgeColor: 'var(--hl-mint)',
-    context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Core coursework spanned distributed systems, machine learning, algorithms, and advanced software engineering, balanced alongside a research assistant role analysing deep fake detection models with Professor Rand Alfaris.",
+    context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Core coursework spanned distributed systems, machine learning, algorithms, and advanced software engineering, balanced alongside independent research analysing deep fake detection models with Professor Rand Alfaris.",
     tech: ['Distributed Systems', 'Machine Learning', 'Algorithms', 'Software Engineering'],
   },
   {
@@ -47,7 +47,7 @@ const ENTRIES: Entry[] = [
     role: 'Software Engineer Intern',
     badgeLabel: 'Boston, MA',
     badgeColor: 'var(--hl-yellow)',
-    context: 'Software Engineer Intern on a small 6-engineer team in Boston, MA. Architected a Python automation framework using OOP design patterns and cloud-native FastAPI service generation that cut QA environment setup time by 60% (6 hours down to 1). Integrated GitHub Actions CI/CD across the full SDLC, cutting manual processing overhead by 60% and enabling real-time release traceability. Also designed and built a chatbot using Python and agentic workflow frameworks to streamline internal process guidance, improving sales efficiency by 20%.',
+    context: 'Software Engineer Intern on a small 6-engineer team in Boston, MA, building internal tooling and automation across the SDLC. Built a Python automation framework that cut QA environment setup time by 60% and streamlined CI/CD release traceability with GitHub Actions, and shipped an agentic chatbot that improved internal sales efficiency by 20%.',
     tech: ['Python', 'FastAPI', 'OOP Design', 'GitHub Actions', 'CI/CD', 'Agentic Workflows'],
   },
   {
