@@ -105,9 +105,10 @@
   color: var(--color-text);
 }
 
-.chipEmoji {
-  font-size: 1rem;
-  line-height: 1;
+.chipIcon {
+  display: flex;
+  align-items: center;
+  color: var(--color-muted);
 }
 
 .chipLabel {

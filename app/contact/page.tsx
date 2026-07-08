@@ -1,14 +1,14 @@
 'use client'
 
 import H from '../../components/Highlight'
+import { GitHubIcon, LinkedInIcon, EmailIcon, ResumeIcon } from '../../components/SocialIcons'
 import styles from './contact.module.css'
 
-
 const LINKS = [
-  { emoji: '✉️', label: 'Email',    href: 'mailto:umach1503@gmail.com' },
-  { emoji: '💼', label: 'LinkedIn', href: 'https://www.linkedin.com/in/uma-chinnam-ab030320b/' },
-  { emoji: '🐙', label: 'GitHub',   href: 'https://github.com/uma-1510' },
-  { emoji: '📄', label: 'Résumé',   href: '/resume.docx' },
+  { icon: <EmailIcon size={16} />,    label: 'Email',    href: 'mailto:umach1503@gmail.com' },
+  { icon: <LinkedInIcon size={16} />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/uma-chinnam-ab030320b/' },
+  { icon: <GitHubIcon size={16} />,   label: 'GitHub',   href: 'https://github.com/uma-1510' },
+  { icon: <ResumeIcon size={16} />,   label: 'Résumé',   href: '/resume.docx' },
 ]
 
 export default function ContactPage() {
@@ -59,7 +59,7 @@ export default function ContactPage() {
         {/* Link chips */}
         <p className={styles.linksLabel}>Find me at</p>
         <div className={styles.linksGrid}>
-          {LINKS.map(({ emoji, label, href }) => (
+          {LINKS.map(({ icon, label, href }) => (
             <a
               key={label}
               href={href}
@@ -67,7 +67,7 @@ export default function ContactPage() {
               rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
               className={styles.chip}
             >
-              <span className={styles.chipEmoji}>{emoji}</span>
+              <span className={styles.chipIcon}>{icon}</span>
               <span className={styles.chipLabel}>{label}</span>
             </a>
           ))}
