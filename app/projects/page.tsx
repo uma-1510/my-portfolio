@@ -2,6 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 import type { Metadata } from 'next'
+import {
+  SiPython, SiFastapi, SiSpringboot, SiReact, SiNextdotjs, SiDocker,
+  SiApachespark, SiApachekafka, SiPostgresql, SiMongodb, SiRedis,
+  SiLangchain, SiTensorflow, SiTerraform, SiPrometheus, SiApachesolr,
+} from 'react-icons/si'
+import { DiJava } from 'react-icons/di'
+import { FaAws } from 'react-icons/fa'
 import styles from './projects.module.css'
 
 /* ---- Animated project card ---- */
@@ -78,26 +85,26 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
    SKILLS DATA
    ============================================ */
 const SKILLS = [
-  { icon: '🐍', label: 'Python' },
-  { icon: '☕', label: 'Java' },
-  { icon: '⚡', label: 'FastAPI' },
-  { icon: '🌱', label: 'Spring Boot' },
-  { icon: '⚛️', label: 'React' },
-  { icon: '▲', label: 'Next.js' },
-  { icon: '🐳', label: 'Docker' },
-  { icon: '☁️', label: 'AWS' },
-  { icon: '🔥', label: 'Apache Spark' },
-  { icon: '📨', label: 'Apache Kafka' },
-  { icon: '🗄️', label: 'PostgreSQL' },
-  { icon: '🍃', label: 'MongoDB' },
-  { icon: '🔴', label: 'Redis' },
-  { icon: '🤖', label: 'LangChain' },
-  { icon: '🧠', label: 'RAG / GenAI' },
-  { icon: '📊', label: 'TensorFlow' },
-  { icon: '🔧', label: 'gRPC' },
-  { icon: '🏗️', label: 'Terraform' },
-  { icon: '📈', label: 'Prometheus' },
-  { icon: '🔍', label: 'Apache Solr' },
+  { icon: <SiPython />, label: 'Python' },
+  { icon: <DiJava />, label: 'Java' },
+  { icon: <SiFastapi />, label: 'FastAPI' },
+  { icon: <SiSpringboot />, label: 'Spring Boot' },
+  { icon: <SiReact />, label: 'React' },
+  { icon: <SiNextdotjs />, label: 'Next.js' },
+  { icon: <SiDocker />, label: 'Docker' },
+  { icon: <FaAws />, label: 'AWS' },
+  { icon: <SiApachespark />, label: 'Apache Spark' },
+  { icon: <SiApachekafka />, label: 'Apache Kafka' },
+  { icon: <SiPostgresql />, label: 'PostgreSQL' },
+  { icon: <SiMongodb />, label: 'MongoDB' },
+  { icon: <SiRedis />, label: 'Redis' },
+  { icon: <SiLangchain />, label: 'LangChain' },
+  { icon: null, label: 'RAG / GenAI' },
+  { icon: <SiTensorflow />, label: 'TensorFlow' },
+  { icon: null, label: 'gRPC' },
+  { icon: <SiTerraform />, label: 'Terraform' },
+  { icon: <SiPrometheus />, label: 'Prometheus' },
+  { icon: <SiApachesolr />, label: 'Apache Solr' },
 ]
 
 /* ============================================
@@ -165,7 +172,7 @@ export default function ProjectsPage() {
         <div className={styles.skillsGrid}>
           {SKILLS.map(({ icon, label }) => (
             <div key={label} className={styles.skillChip}>
-              <span className={styles.skillIcon}>{icon}</span>
+              {icon && <span className={styles.skillIcon}>{icon}</span>}
               {label}
             </div>
           ))}
