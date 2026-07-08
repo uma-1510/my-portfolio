@@ -61,7 +61,6 @@ export default function HomePage() {
         <motion.div variants={item} className={styles.divider} />
 
         <motion.div variants={item} className={styles.section}>
-          <h2 className={styles.sectionTitle}>What I Believe</h2>
           <p className={styles.bioLead}>
             I build systems that hold up when it matters — distributed infrastructure,
             AI-powered applications, and backends that scale. Things that solve real
@@ -69,11 +68,8 @@ export default function HomePage() {
           </p>
           <p className={styles.bioBody}>
             MS Computer Science at Clark University (Dean&apos;s Scholar). ~1.5 years of
-            production experience across HCL Software and Quinbay Technologies. Currently
-            in my final semester, looking for my first full-time role in tech.
-          </p>
-          <p className={styles.bioBody}>
-            Since you&apos;re already here, feel free to stick around &amp; say hi.
+            production experience across HCL Software and Quinbay Technologies. Actively
+            looking for my first full-time role in tech.
           </p>
 
           <div className={styles.rolesBox}>
@@ -84,10 +80,11 @@ export default function HomePage() {
         </motion.div>
 
         <motion.div variants={item} className={styles.ctaCard}>
-          <h2 className={styles.ctaTitle}>Building Bold Things</h2>
+          <h2 className={styles.ctaTitle}>Open to New Opportunities</h2>
           <p className={styles.ctaBody}>
-            If you&apos;re working on something ambitious, unconventional, or technically
-            deep — I&apos;d love to connect.
+            I&apos;ve graduated and I&apos;m actively interviewing for full-time roles. If
+            you&apos;re working on something ambitious, unconventional, or technically deep
+            — I&apos;d love to connect.
           </p>
           <div className={styles.ctaActions}>
             <a href="/contact" className={styles.ctaButton}>Start a Conversation</a>
