@@ -38,33 +38,6 @@ function CountUp({ to, suffix = '', prefix = '' }: { to: number; suffix?: string
   return <span ref={ref}>{prefix}{count}{suffix}</span>
 }
 
-/* ── Animated scroll-in card ───────────────────────────────── */
-function AnimCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add(styles.cardVisible), delay)
-          obs.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [delay])
-
-  return (
-    <div ref={ref} className={styles.card}>
-      {children}
-    </div>
-  )
-}
-
 /* ── Data ───────────────────────────────────────────────────── */
 const PROOF_STATS = [
   {
@@ -90,27 +63,6 @@ const PROOF_STATS = [
     suffix: '%',
     label: 'JUnit test coverage',
     context: 'Quinbay Technologies · 120+ tests across 5 microservices',
-  },
-]
-
-const WHAT_I_DO = [
-  {
-    emoji: '⚙️',
-    title: 'Backend & Distributed Systems',
-    body: `I have shipped real distributed infrastructure: a consistent hash ring task queue with heartbeat-based failure detection, Spark ETL pipelines processing telemetry from 10,000+ endpoints, and Kafka-based event systems in production. This is not classroom knowledge. I have seen these systems fail and I have fixed them.`,
-    tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
-  },
-  {
-    emoji: '🤖',
-    title: 'AI & GenAI in Production',
-    body: `I have built GenAI applications that actually work in production, not just API wrappers. A RAG-powered internal assistant at HCL using LangChain. A medical Q&A system with FAISS vector search and hallucination guardrails. Semantic caching that cut costs 70%. I understand the gap between "it works in a notebook" and "it works at scale."`,
-    tags: ['LangChain', 'RAG', 'FAISS', 'Sentence-Transformers', 'Gemini', 'Prompt Engineering'],
-  },
-  {
-    emoji: '☁️',
-    title: 'Cloud Infrastructure & DevOps',
-    body: `I manage the whole lifecycle, not just the code. Zero-downtime EC2 deployments via CodeDeploy. Terraform-managed infra. CI/CD pipelines with automated testing. Observability with Prometheus and CloudWatch. I care about what happens after the merge.`,
-    tags: ['AWS', 'Docker', 'Terraform', 'CI/CD', 'Prometheus', 'CloudWatch', 'CodeDeploy'],
   },
 ]
 
@@ -153,23 +105,6 @@ export default function HireMePage() {
                 <div className={styles.statLabel}>{s.label}</div>
                 <div className={styles.statContext}>{s.context}</div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── WHAT I DO ── */}
-        <div className={styles.section}>
-          <p className={styles.sectionLabel}>What I actually do</p>
-          <div className={styles.doCards}>
-            {WHAT_I_DO.map(({ emoji, title, body, tags }, i) => (
-              <AnimCard key={title} delay={i * 100}>
-                <div className={styles.doEmoji}>{emoji}</div>
-                <h3 className={styles.doTitle}>{title}</h3>
-                <p className={styles.doBody}>{body}</p>
-                <div className={styles.tagRow}>
-                  {tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}
-                </div>
-              </AnimCard>
             ))}
           </div>
         </div>
