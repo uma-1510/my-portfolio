@@ -11,7 +11,7 @@ export default function BlogPage() {
         <h1 className={styles.title}>Writing</h1>
 
         <p className={styles.lead}>
-          I occasionally write on Medium and other platforms — about engineering,
+          I occasionally write on Medium and other platforms, about engineering,
           systems I have built, and ideas I can not stop thinking about. I genuinely
           believe in learning in public: the act of writing something down forces
           clarity that no amount of thinking alone can produce.
@@ -27,10 +27,10 @@ export default function BlogPage() {
         <div className={styles.comingSoon}>
           <span className={styles.comingSoonEmoji}>✍️</span>
           <div>
-            <p className={styles.comingSoonTitle}>Articles — coming soon</p>
+            <p className={styles.comingSoonTitle}>Articles coming soon</p>
             <p className={styles.comingSoonSub}>
               I am working on a few pieces. Distributed systems, GenAI in production,
-              lessons from building at scale. Watch this space — or follow along on
+              lessons from building at scale. Watch this space, or follow along on
               LinkedIn in the meantime.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function BlogPage() {
 
         {/* LinkedIn CTA */}
         <p className={styles.cta}>
-          Until then —{' '}
+          Until then,{' '}
           <a
             href="https://www.linkedin.com/in/uma-chinnam-ab030320b/"
             target="_blank"

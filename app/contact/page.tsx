@@ -20,10 +20,10 @@ export default function ContactPage() {
         <h1 className={styles.title}>Let&apos;s Talk</h1>
 
         <p className={styles.lead}>
-          I love a good conversation — especially one that starts with a real
+          I love a good conversation, especially one that starts with a real
           problem worth solving. Whether you have a role, an idea, a question,
           or just want to connect with someone who genuinely cares about
-          building things well — my inbox is open.
+          building things well, my inbox is open.
         </p>
 
         {/* Passion block */}
@@ -33,7 +33,7 @@ export default function ContactPage() {
             <strong>distributed systems that need to stay up under pressure</strong>,{' '}
             <strong>intelligent applications where AI actually moves the needle</strong>,{' '}
             <strong>data pipelines that feed decisions at scale</strong>, or{' '}
-            <strong>backend infrastructure that just works</strong> — I want to
+            <strong>backend infrastructure that just works</strong>, I want to
             hear about it. I care deeply about system design, about the craft of
             engineering, and about making software that makes a real difference.
             This is not just what I do. It is what I think about.
@@ -41,7 +41,7 @@ export default function ContactPage() {
         </div>
 
         <p className={styles.body}>
-          The best way to reach me is directly —{' '}
+          The best way to reach me is directly,{' '}
           <a href="mailto:umach1503@gmail.com">
             <H color="yellow">umach1503@gmail.com</H>
           </a>
@@ -54,10 +54,10 @@ export default function ContactPage() {
           >
             LinkedIn
           </a>
-          {' '}— I check it regularly and genuinely enjoy connecting with people there.
+          . I check it regularly and genuinely enjoy connecting with people there.
         </p>
 
-        {/* Terminal — types out contact details interactively */}
+        {/* Terminal, types out contact details interactively */}
         <Terminal />
 
         {/* Link chips */}
@@ -78,7 +78,7 @@ export default function ContactPage() {
         </div>
 
         <p className={styles.responseNote}>
-          I read every message I get. If it resonates, I will write back — usually the same day.
+          I read every message I get. If it resonates, I will write back, usually the same day.
         </p>
 
       </div>

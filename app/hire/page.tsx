@@ -98,28 +98,28 @@ const WHAT_I_DO = [
   {
     emoji: '⚙️',
     title: 'Backend & Distributed Systems',
-    body: `I have shipped real distributed infrastructure — a consistent hash ring task queue with heartbeat-based failure detection, Spark ETL pipelines processing telemetry from 10,000+ endpoints, and Kafka-based event systems in production. This is not classroom knowledge. I have seen these systems fail and I have fixed them.`,
+    body: `I have shipped real distributed infrastructure: a consistent hash ring task queue with heartbeat-based failure detection, Spark ETL pipelines processing telemetry from 10,000+ endpoints, and Kafka-based event systems in production. This is not classroom knowledge. I have seen these systems fail and I have fixed them.`,
     tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
   },
   {
     emoji: '🤖',
     title: 'AI & GenAI in Production',
-    body: `I have built GenAI applications that actually work in production — not just API wrappers. A RAG-powered internal assistant at HCL using LangChain. A medical Q&A system with FAISS vector search and hallucination guardrails. Semantic caching that cut costs 70%. I understand the gap between "it works in a notebook" and "it works at scale."`,
+    body: `I have built GenAI applications that actually work in production, not just API wrappers. A RAG-powered internal assistant at HCL using LangChain. A medical Q&A system with FAISS vector search and hallucination guardrails. Semantic caching that cut costs 70%. I understand the gap between "it works in a notebook" and "it works at scale."`,
     tags: ['LangChain', 'RAG', 'FAISS', 'Sentence-Transformers', 'Gemini', 'Prompt Engineering'],
   },
   {
     emoji: '☁️',
     title: 'Cloud Infrastructure & DevOps',
-    body: `I manage the whole lifecycle — not just the code. Zero-downtime EC2 deployments via CodeDeploy. Terraform-managed infra. CI/CD pipelines with automated testing. Observability with Prometheus and CloudWatch. I care about what happens after the merge.`,
+    body: `I manage the whole lifecycle, not just the code. Zero-downtime EC2 deployments via CodeDeploy. Terraform-managed infra. CI/CD pipelines with automated testing. Observability with Prometheus and CloudWatch. I care about what happens after the merge.`,
     tags: ['AWS', 'Docker', 'Terraform', 'CI/CD', 'Prometheus', 'CloudWatch', 'CodeDeploy'],
   },
 ]
 
 const WHAT_I_WANT = [
-  'A team that argues about the right way to do things — because they actually care.',
+  'A team that argues about the right way to do things, because they actually care.',
   'Problems where the stakes are real. Systems that people depend on.',
   'Engineers I can learn from. I am not the smartest person in any room and I am fine with that.',
-  'A place where good work is noticed — not just shipped and forgotten.',
+  'A place where good work is noticed, not just shipped and forgotten.',
 ]
 
 /* ── Page ───────────────────────────────────────────────────── */
@@ -203,7 +203,7 @@ export default function HireMePage() {
               <div>
                 <p className={styles.eligTitle}>Authorized to work immediately</p>
                 <p className={styles.eligBody}>
-                  On <strong>OPT + STEM extension</strong> — up to 3 years, no sponsorship needed to start.
+                  On <strong>OPT + STEM extension</strong>, up to 3 years, no sponsorship needed to start.
                   Eligible for H-1B thereafter.
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default function HireMePage() {
         {/* ── FINAL CTA ── */}
         <div className={styles.finalCta}>
           <p className={styles.finalCtaText}>
-            If your team is building something worth caring about — I want to hear about it.
+            If your team is building something worth caring about, I want to hear about it.
           </p>
           <div className={styles.heroCta}>
             <a href="/contact" className={styles.ctaPrimary}>Get in touch →</a>

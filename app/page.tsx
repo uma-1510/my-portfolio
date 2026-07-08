@@ -62,7 +62,7 @@ export default function HomePage() {
 
         <motion.div variants={item} className={styles.section}>
           <p className={styles.bioLead}>
-            I build systems that hold up when it matters — distributed infrastructure,
+            I build systems that hold up when it matters: distributed infrastructure,
             AI-powered applications, and backends that scale. Things that solve real
             problems for real people, not just impressive-looking demos.
           </p>
@@ -83,8 +83,8 @@ export default function HomePage() {
           <h2 className={styles.ctaTitle}>Open to New Opportunities</h2>
           <p className={styles.ctaBody}>
             I&apos;ve graduated and I&apos;m looking for opportunities in full-time roles. If
-            you&apos;re working on something ambitious, unconventional, or technically deep
-            — I&apos;d love to connect.
+            you&apos;re working on something ambitious, unconventional, or technically deep,
+            I&apos;d love to connect.
           </p>
           <div className={styles.ctaActions}>
             <a href="/contact" className={styles.ctaButton}>Start a Conversation</a>

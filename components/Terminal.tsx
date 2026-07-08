@@ -9,7 +9,7 @@ const LINES = [
   { delay: 1100, type: 'blank',   text: '' },
   { delay: 1200, type: 'label',   text: 'NAME         Uma Maheswari Chinnam' },
   { delay: 1400, type: 'label',   text: 'ROLE         Software Engineer (New Grad)' },
-  { delay: 1600, type: 'label',   text: 'LOCATION     Boston, MA — open to relocate' },
+  { delay: 1600, type: 'label',   text: 'LOCATION     Boston, MA · open to relocate' },
   { delay: 1800, type: 'label',   text: 'STATUS       ● Looking for opportunities' },
   { delay: 2000, type: 'blank',   text: '' },
   { delay: 2100, type: 'label',   text: 'STACK        Java · Python · Go (learning)' },
@@ -17,7 +17,7 @@ const LINES = [
   { delay: 2500, type: 'label',   text: '             Spark · Kafka · LangChain · AWS' },
   { delay: 2700, type: 'blank',   text: '' },
   { delay: 2800, type: 'output',  text: 'Running eligibility check...' },
-  { delay: 3300, type: 'success', text: '✓ OPT + STEM — no sponsorship needed to start' },
+  { delay: 3300, type: 'success', text: '✓ OPT + STEM · no sponsorship needed to start' },
   { delay: 3500, type: 'success', text: '✓ Available immediately' },
   { delay: 3700, type: 'success', text: '✓ Dean\'s Scholar, Clark University MS CS' },
   { delay: 3900, type: 'blank',   text: '' },
@@ -69,7 +69,7 @@ export default function Terminal() {
         <span className={styles.dot} style={{ background: '#ff5f57' }} />
         <span className={styles.dot} style={{ background: '#febc2e' }} />
         <span className={styles.dot} style={{ background: '#28c840' }} />
-        <span className={styles.title}>bash — uma@portfolio</span>
+        <span className={styles.title}>bash · uma@portfolio</span>
       </div>
 
       <div className={styles.body}>

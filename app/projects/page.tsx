@@ -33,7 +33,7 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
   return (
     <div ref={ref} className={styles.card}>
 
-      {/* Preview area — drop an <img> or <video> here when ready */}
+      {/* Preview area: drop an <img> or <video> here when ready */}
       <div className={styles.cardPreview}>
         {/*
           TO ADD AN IMAGE:
@@ -107,7 +107,7 @@ const PROJECTS = [
   {
     title:  'Resume OS',
     emoji:  '📄',
-    desc:   'A browser extension that reads a live job posting and instantly rewrites your resume to match it — 100% client-side, no data ever leaves your machine. Built for job seekers who are tired of tailoring resumes manually.',
+    desc:   'A browser extension that reads a live job posting and instantly rewrites your resume to match it: 100% client-side, no data ever leaves your machine. Built for job seekers who are tired of tailoring resumes manually.',
     tech:   ['Node.js', 'React', 'LLMs', 'DOCX generation'],
     github: 'https://github.com/uma-1510/resume-os',
   },
@@ -121,7 +121,7 @@ const PROJECTS = [
   {
     title:  'Distributed Task Queue',
     emoji:  '⚙️',
-    desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies — zero task loss under failure.',
+    desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies, for zero task loss under failure.',
     tech:   ['Python', 'gRPC', 'Redis', 'PostgreSQL', 'REST API'],
     github: 'https://github.com/uma-1510/distributed-task-queue',
   },

@@ -6,10 +6,10 @@ import ThemeProvider from '../components/ThemeProvider'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s — Uma Chinnam',
+    template: '%s · Uma Chinnam',
     default:  'Uma Chinnam',
   },
-  description: 'Software engineer, builder, MS CS candidate at Clark University.',
+  description: 'Software engineer and builder, MS CS graduate of Clark University.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </main>
           </div>
-          {/* Prev / Next navigation — outside the scroll container so it stays fixed */}
+          {/* Prev/Next navigation sits outside the scroll container so it stays fixed */}
           <NavControls />
         </ThemeProvider>
       </body>

@@ -26,7 +26,7 @@ const ENTRIES: Entry[] = [
     role: 'Research Assistant',
     badgeLabel: 'Research',
     badgeColor: 'var(--hl-lavender)',
-    context: 'Worked directly with Professor Rand Alfaris on deep fake detection research — reading papers, benchmarking models, and building the foundation for a structured literature review.',
+    context: 'Worked directly with Professor Rand Alfaris on deep fake detection research, reading papers, benchmarking models, and building the foundation for a structured literature review.',
     bullets: [
       'Analysed and benchmarked deep fake detection models across multiple architectures against real-world constraints including latency, accuracy, and compute cost.',
       'Identified and organised relevant publications to build a structured literature review, mapping gaps and trends in the detection landscape.',
@@ -44,9 +44,9 @@ const ENTRIES: Entry[] = [
     badgeColor: 'var(--hl-mint)',
     context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Balanced coursework with research and side projects throughout.",
     bullets: [
-      "Awarded Dean's Scholar — granted for academic excellence across the programme.",
+      "Awarded Dean's Scholar for academic excellence across the programme.",
       'Core coursework spanning distributed systems, machine learning, algorithms, and advanced software engineering.',
-      'Research assistant role alongside studies — analysed deep fake detection models with Professor Rand Alfaris.',
+      'Research assistant role alongside studies: analysed deep fake detection models with Professor Rand Alfaris.',
     ],
     tech: ['Distributed Systems', 'Machine Learning', 'Algorithms', 'Software Engineering'],
   },
@@ -55,10 +55,10 @@ const ENTRIES: Entry[] = [
     logo: '🏢',
     period: 'Aug 2023 – Jul 2024',
     company: 'HCL Software',
-    role: 'Software Engineer — BigFix Endpoint Security',
+    role: 'Software Engineer, BigFix Endpoint Security',
     badgeLabel: 'Enterprise · Cross-timezone',
     badgeColor: 'var(--hl-sky)',
-    context: 'Part of the BigFix Data Analytics team, working across time zones with engineers in the U.S., India, and Europe. The work sat at the intersection of data engineering, cloud infrastructure, and AI — designing pipelines and making data ready for dashboards that enterprise clients depended on.',
+    context: 'Part of the BigFix Data Analytics team, working across time zones with engineers in the U.S., India, and Europe. The work sat at the intersection of data engineering, cloud infrastructure, and AI, designing pipelines and making data ready for dashboards that enterprise clients depended on.',
     bullets: [
       'Designed and operated real-time distributed Spark ETL pipelines on AWS processing telemetry from 10,000+ enterprise endpoints, reducing data processing time by 40%.',
       'Engineered a RAG-powered internal AI assistant using LangChain, integrating GenAI tools directly into the developer workflow.',
@@ -72,10 +72,10 @@ const ENTRIES: Entry[] = [
     logo: '🚀',
     period: 'Jan 2023 – Jul 2023',
     company: 'Quinbay Technologies',
-    role: 'Software Engineer Intern — E-Commerce Platform',
+    role: 'Software Engineer Intern, E-Commerce Platform',
     badgeLabel: 'Startup · Fast-paced',
     badgeColor: 'var(--hl-peach)',
-    context: 'Quinbay is a fast-growing startup building e-commerce infrastructure for Southeast Asian markets. I wore multiple hats — writing backend APIs, collaborating with product and design, and shipping features real users in Indonesia interacted with daily.',
+    context: 'Quinbay is a fast-growing startup building e-commerce infrastructure for Southeast Asian markets. I wore multiple hats: writing backend APIs, collaborating with product and design, and shipping features real users in Indonesia interacted with daily.',
     bullets: [
       'Built 25+ RESTful APIs using Spring Boot across 5 microservices for an Indonesian e-commerce platform, achieving 93% unit test coverage.',
       'Integrated Apache Kafka for async event-driven communication and Apache Solr for full-text search, improving message throughput by 40%.',
@@ -92,11 +92,11 @@ const ENTRIES: Entry[] = [
     role: 'Machine Learning Intern',
     badgeLabel: 'ML / Research',
     badgeColor: 'var(--hl-pink)',
-    context: 'An early experience working at the intersection of data and machine learning — analysing models, testing their performance, and building systems around them. First hands-on ML work outside a classroom.',
+    context: 'An early experience working at the intersection of data and machine learning, analysing models, testing their performance, and building systems around them. First hands-on ML work outside a classroom.',
     bullets: [
       'Analysed and evaluated machine learning models across multiple domains, testing for accuracy, robustness, and edge-case behaviour.',
       'Built supporting systems and tooling to operationalise model outputs for downstream applications.',
-      'Gained end-to-end experience across the ML lifecycle — from data preparation through evaluation and deployment.',
+      'Gained end-to-end experience across the ML lifecycle, from data preparation through evaluation and deployment.',
     ],
     tech: ['Python', 'Machine Learning', 'Data Analysis', 'Model Evaluation'],
   },
@@ -114,7 +114,7 @@ function TimelineItem({
 }) {
   const card = (
     <div>
-      {/* Collapsed header — always visible */}
+      {/* Collapsed header, always visible */}
       <button
         className={styles.cardBtn}
         onClick={onToggle}
@@ -130,7 +130,7 @@ function TimelineItem({
         <span className={styles.hint}>{isOpen ? '↑ collapse' : '↓ expand'}</span>
       </button>
 
-      {/* Smooth expand — CSS transition only, no remount */}
+      {/* Smooth expand: CSS transition only, no remount */}
       <div className={`${styles.panel} ${isOpen ? styles.open : ''}`}>
         <div className={styles.panelInner}>
           <p className={styles.context}>{entry.context}</p>
