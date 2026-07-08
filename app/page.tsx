@@ -56,7 +56,7 @@ export default function HomePage() {
             problems for real people, not just impressive-looking demos.
           </p>
           <p className={styles.bioBody}>
-            MS Computer Science at Clark University (Dean&apos;s Scholar). ~1.5 years of
+            MS Computer Science at Clark University (Dean&apos;s Scholar). ~2 years of
             production experience across HCL Software and Quinbay Technologies. Now
             actively interviewing in tech.
           </p>
