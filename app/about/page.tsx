@@ -232,8 +232,7 @@ export default function AboutPage() {
 
           <motion.p className={styles.body} variants={fadeUp}>
             And somewhere between leaving home and landing in the U.S., I discovered I
-            actually enjoy cooking. Did not see that one coming. Hyderabadi biryani is
-            still the benchmark I cook everything else against.
+            actually enjoy cooking. Did not see that one coming.
           </motion.p>
         </Section>
 
