@@ -159,7 +159,7 @@ export default function WorkPage() {
       <div className={styles.content}>
 
         <h1 className={styles.title}>Experience</h1>
-        <p className={styles.subtitle}>Click any card to see the full story.</p>
+        <p className={styles.subtitle}>My career trajectory</p>
 
         <div className={styles.timeline}>
           {ENTRIES.map((entry, i) => (
