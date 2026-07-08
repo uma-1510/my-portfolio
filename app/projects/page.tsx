@@ -2,13 +2,6 @@
 
 import { useEffect, useRef } from 'react'
 import type { Metadata } from 'next'
-import {
-  SiPython, SiFastapi, SiSpringboot, SiReact, SiNextdotjs, SiDocker,
-  SiApachespark, SiApachekafka, SiPostgresql, SiMongodb, SiRedis,
-  SiLangchain, SiTensorflow, SiTerraform, SiPrometheus, SiApachesolr,
-} from 'react-icons/si'
-import { DiJava } from 'react-icons/di'
-import { FaAws } from 'react-icons/fa'
 import styles from './projects.module.css'
 
 /* ---- Animated project card ---- */
@@ -82,32 +75,6 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
 }
 
 /* ============================================
-   SKILLS DATA
-   ============================================ */
-const SKILLS = [
-  { icon: <SiPython color="#3776AB" />, label: 'Python' },
-  { icon: <DiJava color="#ED8B00" />, label: 'Java' },
-  { icon: <SiFastapi color="#009688" />, label: 'FastAPI' },
-  { icon: <SiSpringboot color="#6DB33F" />, label: 'Spring Boot' },
-  { icon: <SiReact color="#61DAFB" />, label: 'React' },
-  { icon: <SiNextdotjs color="var(--color-text)" />, label: 'Next.js' },
-  { icon: <SiDocker color="#2496ED" />, label: 'Docker' },
-  { icon: <FaAws color="#FF9900" />, label: 'AWS' },
-  { icon: <SiApachespark color="#E25A1C" />, label: 'Apache Spark' },
-  { icon: <SiApachekafka color="var(--color-text)" />, label: 'Apache Kafka' },
-  { icon: <SiPostgresql color="#4169E1" />, label: 'PostgreSQL' },
-  { icon: <SiMongodb color="#47A248" />, label: 'MongoDB' },
-  { icon: <SiRedis color="#DC382D" />, label: 'Redis' },
-  { icon: <SiLangchain color="var(--color-text)" />, label: 'LangChain' },
-  { icon: null, label: 'RAG / GenAI' },
-  { icon: <SiTensorflow color="#FF6F00" />, label: 'TensorFlow' },
-  { icon: null, label: 'gRPC' },
-  { icon: <SiTerraform color="#7B42BC" />, label: 'Terraform' },
-  { icon: <SiPrometheus color="#E6522C" />, label: 'Prometheus' },
-  { icon: <SiApachesolr color="#D9411E" />, label: 'Apache Solr' },
-]
-
-/* ============================================
    PROJECTS DATA
    ============================================ */
 const PROJECTS = [
@@ -160,23 +127,10 @@ export default function ProjectsPage() {
     <div className={styles.page}>
       <div className={styles.content}>
 
-        <h1 className={styles.title}>Projects & Skills</h1>
+        <h1 className={styles.title}>Projects</h1>
         <p className={styles.subtitle}>
-          Things I have built, technologies I work with, and problems I found interesting enough to solve.
+          Things I have built and problems I found interesting enough to solve.
         </p>
-
-        {/* ============================================
-            SKILLS
-            ============================================ */}
-        <p className={styles.sectionLabel}>Technologies</p>
-        <div className={styles.skillsGrid}>
-          {SKILLS.map(({ icon, label }) => (
-            <div key={label} className={styles.skillChip}>
-              {icon && <span className={styles.skillIcon}>{icon}</span>}
-              {label}
-            </div>
-          ))}
-        </div>
 
         {/* ============================================
             PROJECTS
