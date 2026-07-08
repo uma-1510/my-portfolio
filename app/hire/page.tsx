@@ -97,20 +97,20 @@ const WHAT_I_DO = [
   {
     emoji: '⚙️',
     title: 'Backend & Distributed Systems',
-    body: `I've built a fault-tolerant distributed task scheduler in Python using consistent hashing and gRPC/Protobuf, hitting 98% task completion reliability with 10-second self-healing recovery. At HCL, I built PySpark ETL pipelines on AWS processing telemetry from 10,000+ enterprise endpoints.`,
-    tags: ['Python', 'Java', 'Go', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
+    body: `I have shipped real distributed infrastructure: a consistent hash ring task queue with heartbeat-based failure detection, Spark ETL pipelines processing telemetry from 10,000+ endpoints, and Kafka-based event systems in production. This is not classroom knowledge. I have seen these systems fail and I have fixed them.`,
+    tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
   },
   {
     emoji: '🤖',
-    title: 'AI in Production',
-    body: `At HCL, I built a RAG-powered documentation assistant with LangChain that cut token usage 30% and lifted developer productivity 53%. On Gathrd, an agentic photo platform, pgvector semantic search runs sub-200ms queries.`,
-    tags: ['LangChain', 'RAG', 'pgvector', 'PyTorch', 'LLMs', 'Claude MCP'],
+    title: 'AI & GenAI in Production',
+    body: `I have built GenAI applications that actually work in production, not just API wrappers. A RAG-powered internal assistant at HCL using LangChain. A medical Q&A system with FAISS vector search and hallucination guardrails. Semantic caching that cut costs 70%. I understand the gap between "it works in a notebook" and "it works at scale."`,
+    tags: ['LangChain', 'RAG', 'FAISS', 'Sentence-Transformers', 'Gemini', 'Prompt Engineering'],
   },
   {
     emoji: '☁️',
-    title: 'Cloud & Observability',
-    body: `AWS and Docker infrastructure, GitHub Actions and Jenkins CI/CD pipelines. At HCL, Grafana and CloudWatch observability helped take production uptime from 99.5% to 99.8%.`,
-    tags: ['AWS', 'GCP', 'Docker', 'GitHub Actions', 'Jenkins', 'Grafana', 'CloudWatch'],
+    title: 'Cloud Infrastructure & DevOps',
+    body: `I manage the whole lifecycle, not just the code. Zero-downtime EC2 deployments via CodeDeploy. Terraform-managed infra. CI/CD pipelines with automated testing. Observability with Prometheus and CloudWatch. I care about what happens after the merge.`,
+    tags: ['AWS', 'Docker', 'Terraform', 'CI/CD', 'Prometheus', 'CloudWatch', 'CodeDeploy'],
   },
 ]
 
