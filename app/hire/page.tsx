@@ -132,7 +132,7 @@ export default function HireMePage() {
         <div className={styles.hero}>
           <div className={styles.heroBadge}>
             <span className={styles.pulseDot} />
-            Looking for opportunities · Available immediately
+            Actively interviewing · Available immediately
           </div>
           <h1 className={styles.heroTitle}>
             I ship things<br />

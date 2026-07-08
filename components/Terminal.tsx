@@ -10,7 +10,7 @@ const LINES = [
   { delay: 1200, type: 'label',   text: 'NAME         Uma Maheswari Chinnam' },
   { delay: 1400, type: 'label',   text: 'ROLE         Software Engineer (New Grad)' },
   { delay: 1600, type: 'label',   text: 'LOCATION     Boston, MA · open to relocate' },
-  { delay: 1800, type: 'label',   text: 'STATUS       ● Looking for opportunities' },
+  { delay: 1800, type: 'label',   text: 'STATUS       ● Actively interviewing' },
   { delay: 2000, type: 'blank',   text: '' },
   { delay: 2100, type: 'label',   text: 'STACK        Java · Python · Go (learning)' },
   { delay: 2300, type: 'label',   text: '             Spring Boot · FastAPI · Next.js' },

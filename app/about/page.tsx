@@ -164,8 +164,7 @@ export default function AboutPage() {
           <Marker label="02 / right now" />
 
           <motion.p className={styles.lead} variants={fadeUp}>
-            Freshly graduated. Actively{' '}
-            <H color="peach">looking for opportunities</H> in tech. In between, I am
+            Freshly graduated. <H color="peach">Actively interviewing</H> in tech. In between, I am
             networking (yes, the human kind), attending events, and struggling to not start
             five new side projects at once.
           </motion.p>
