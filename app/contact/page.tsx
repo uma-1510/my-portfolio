@@ -19,25 +19,9 @@ export default function ContactPage() {
         <h1 className={styles.title}>Let&apos;s Talk</h1>
 
         <p className={styles.lead}>
-          I love a good conversation, especially one that starts with a real
-          problem worth solving. Whether you have a role, an idea, a question,
-          or just want to connect with someone who genuinely cares about
-          building things well, my inbox is open.
+          Feel free to get in touch and let&apos;s have a discussion about how
+          we can work together.
         </p>
-
-        {/* Passion block */}
-        <div className={styles.passionBlock}>
-          <p>
-            If your team is building{' '}
-            <strong>distributed systems that need to stay up under pressure</strong>,{' '}
-            <strong>intelligent applications where AI actually moves the needle</strong>,{' '}
-            <strong>data pipelines that feed decisions at scale</strong>, or{' '}
-            <strong>backend infrastructure that just works</strong>, I want to
-            hear about it. I care deeply about system design, about the craft of
-            engineering, and about making software that makes a real difference.
-            This is not just what I do. It is what I think about.
-          </p>
-        </div>
 
         <p className={styles.body}>
           The best way to reach me is directly,{' '}

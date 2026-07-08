@@ -26,28 +26,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* ---- Passion block ---- */
-.passionBlock {
-  border-left: 3px solid var(--color-text);
-  padding: 1.1rem 1.4rem;
-  margin: 0 0 1.5rem;
-  background: var(--color-surface);
-  border-radius: 0 8px 8px 0;
-  box-shadow: var(--shadow-sm);
-}
-
-.passionBlock p {
-  font-size: 0.98rem;
-  line-height: 1.82;
-  color: var(--color-muted);
-  margin: 0;
-}
-
-.passionBlock strong {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
 /* ---- Body text ---- */
 .body {
   font-size: 1.02rem;
