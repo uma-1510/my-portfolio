@@ -13,7 +13,6 @@ interface Entry {
   badgeLabel: string
   badgeColor: string
   context: string
-  bullets: string[]
   tech: string[]
 }
 
@@ -21,17 +20,12 @@ const ENTRIES: Entry[] = [
   {
     side: 'left',
     logo: '🔬',
-    period: 'Aug 2025 – Dec 2025',
+    period: 'Jan 2026 – Apr 2026',
     company: 'Clark University',
-    role: 'Research Assistant',
+    role: 'Independent Research',
     badgeLabel: 'Research',
     badgeColor: 'var(--hl-lavender)',
-    context: 'Worked directly with Professor Rand Alfaris on deep fake detection research, reading papers, benchmarking models, and building the foundation for a structured literature review.',
-    bullets: [
-      'Analysed and benchmarked deep fake detection models across multiple architectures against real-world constraints including latency, accuracy, and compute cost.',
-      'Identified and organised relevant publications to build a structured literature review, mapping gaps and trends in the detection landscape.',
-      'Collaborated closely with Professor Rand Alfaris on research methodology, model evaluation, and synthesis of findings.',
-    ],
+    context: "Continued deep fake detection research independently, building on earlier work with Professor Rand Alfaris at Clark University. Analysed and benchmarked deep fake detection models across multiple architectures against real-world constraints including latency, accuracy, and compute cost, and organised relevant publications into a structured literature review mapping gaps and trends in the detection landscape.",
     tech: ['Python', 'Deep Learning', 'Computer Vision', 'TensorFlow', 'Research Methods'],
   },
   {
@@ -42,62 +36,51 @@ const ENTRIES: Entry[] = [
     role: 'Master of Science, Computer Science',
     badgeLabel: "Dean's Scholar",
     badgeColor: 'var(--hl-mint)',
-    context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Balanced coursework with research and side projects throughout.",
-    bullets: [
-      "Awarded Dean's Scholar for academic excellence across the programme.",
-      'Core coursework spanning distributed systems, machine learning, algorithms, and advanced software engineering.',
-      'Research assistant role alongside studies: analysed deep fake detection models with Professor Rand Alfaris.',
-    ],
+    context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Core coursework spanned distributed systems, machine learning, algorithms, and advanced software engineering, balanced alongside a research assistant role analysing deep fake detection models with Professor Rand Alfaris.",
     tech: ['Distributed Systems', 'Machine Learning', 'Algorithms', 'Software Engineering'],
   },
   {
     side: 'left',
+    logo: '🛠️',
+    period: 'Jun 2025 – Dec 2025',
+    company: 'DFX',
+    role: 'Software Engineer Intern',
+    badgeLabel: 'Boston, MA',
+    badgeColor: 'var(--hl-yellow)',
+    context: 'Software Engineer Intern on a small 6-engineer team in Boston, MA. Architected a Python automation framework using OOP design patterns and cloud-native FastAPI service generation that cut QA environment setup time by 60% (6 hours down to 1). Integrated GitHub Actions CI/CD across the full SDLC, cutting manual processing overhead by 60% and enabling real-time release traceability. Also designed and built a chatbot using Python and agentic workflow frameworks to streamline internal process guidance, improving sales efficiency by 20%.',
+    tech: ['Python', 'FastAPI', 'OOP Design', 'GitHub Actions', 'CI/CD', 'Agentic Workflows'],
+  },
+  {
+    side: 'right',
     logo: '🏢',
     period: 'Aug 2023 – Jul 2024',
     company: 'HCL Software',
     role: 'Software Engineer, BigFix Endpoint Security',
     badgeLabel: 'Enterprise · Cross-timezone',
     badgeColor: 'var(--hl-sky)',
-    context: 'Part of the BigFix Data Analytics team, working across time zones with engineers in the U.S., India, and Europe. The work sat at the intersection of data engineering, cloud infrastructure, and AI, designing pipelines and making data ready for dashboards that enterprise clients depended on.',
-    bullets: [
-      'Designed and operated real-time distributed Spark ETL pipelines on AWS processing telemetry from 10,000+ enterprise endpoints, reducing data processing time by 40%.',
-      'Engineered a RAG-powered internal AI assistant using LangChain, integrating GenAI tools directly into the developer workflow.',
-      'Built and deployed containerised Python microservices via CI/CD pipelines with automated unit and integration testing.',
-      'Built observability infrastructure using CloudWatch and Prometheus to monitor service health and improve incident response times.',
-    ],
+    context: 'Part of the BigFix Data Analytics team, working across time zones with engineers in the U.S., India, and Europe. Designed and operated real-time distributed Spark ETL pipelines on AWS processing telemetry from 10,000+ enterprise endpoints, reducing data processing time by 40%. Engineered a RAG-powered internal AI assistant using LangChain, integrating GenAI tools directly into the developer workflow, and built observability infrastructure using CloudWatch and Prometheus to monitor service health and improve incident response times.',
     tech: ['Apache Spark', 'AWS', 'Python', 'Docker', 'LangChain', 'RAG', 'CloudWatch', 'Prometheus', 'CI/CD'],
   },
   {
-    side: 'right',
+    side: 'left',
     logo: '🚀',
     period: 'Jan 2023 – Jul 2023',
     company: 'Quinbay Technologies',
     role: 'Software Engineer Intern, E-Commerce Platform',
     badgeLabel: 'Startup · Fast-paced',
     badgeColor: 'var(--hl-peach)',
-    context: 'Quinbay is a fast-growing startup building e-commerce infrastructure for Southeast Asian markets. I wore multiple hats: writing backend APIs, collaborating with product and design, and shipping features real users in Indonesia interacted with daily.',
-    bullets: [
-      'Built 25+ RESTful APIs using Spring Boot across 5 microservices for an Indonesian e-commerce platform, achieving 93% unit test coverage.',
-      'Integrated Apache Kafka for async event-driven communication and Apache Solr for full-text search, improving message throughput by 40%.',
-      'Shipped 10+ features for flash sale retail pricing using AWS and SQL/NoSQL, boosting system performance by 20%.',
-      'Collaborated with product managers and design teams to translate requirements into reliable user-facing features on tight deadlines.',
-    ],
+    context: 'Quinbay is a fast-growing startup building e-commerce infrastructure for Southeast Asian markets. Built 25+ RESTful APIs using Spring Boot across 5 microservices for an Indonesian e-commerce platform, achieving 93% unit test coverage. Integrated Apache Kafka for async event-driven communication and Apache Solr for full-text search, improving message throughput by 40%, and shipped 10+ features for flash sale retail pricing using AWS and SQL/NoSQL, boosting system performance by 20%.',
     tech: ['Java', 'Spring Boot', 'Apache Kafka', 'Apache Solr', 'AWS', 'SQL', 'MongoDB', 'Microservices'],
   },
   {
-    side: 'left',
+    side: 'right',
     logo: '🤖',
     period: 'Jan 2022 – Apr 2022',
     company: 'Indian Servers',
     role: 'Machine Learning Intern',
     badgeLabel: 'ML / Research',
     badgeColor: 'var(--hl-pink)',
-    context: 'An early experience working at the intersection of data and machine learning, analysing models, testing their performance, and building systems around them. First hands-on ML work outside a classroom.',
-    bullets: [
-      'Analysed and evaluated machine learning models across multiple domains, testing for accuracy, robustness, and edge-case behaviour.',
-      'Built supporting systems and tooling to operationalise model outputs for downstream applications.',
-      'Gained end-to-end experience across the ML lifecycle, from data preparation through evaluation and deployment.',
-    ],
+    context: 'An early experience working at the intersection of data and machine learning, analysing and evaluating machine learning models across multiple domains for accuracy, robustness, and edge-case behaviour. Built supporting systems and tooling to operationalise model outputs for downstream applications, gaining end-to-end experience across the ML lifecycle from data preparation through evaluation and deployment.',
     tech: ['Python', 'Machine Learning', 'Data Analysis', 'Model Evaluation'],
   },
 ]
@@ -134,9 +117,6 @@ function TimelineItem({
       <div className={`${styles.panel} ${isOpen ? styles.open : ''}`}>
         <div className={styles.panelInner}>
           <p className={styles.context}>{entry.context}</p>
-          <ul className={styles.bullets}>
-            {entry.bullets.map((b, i) => <li key={i}>{b}</li>)}
-          </ul>
           <div className={styles.techRow}>
             {entry.tech.map(t => (
               <span key={t} className={styles.tech}>{t}</span>
