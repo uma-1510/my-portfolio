@@ -70,7 +70,6 @@ const STATS = [
   '🎓 dean\'s scholar @ clark',
   '🌍 hyderabad → boston',
   '🔬 deep fake detection research',
-  '🎙️ occasional singer. not very good.',
   '🍳 discovered cooking by accident',
   '🏕️ will always say yes to camping',
   '⚡ 1.5 yrs shipping real production systems',
@@ -118,9 +117,7 @@ export default function AboutPage() {
         {/* ── HERO ───────────────────────────── */}
         <Section>
           <motion.h1 className={styles.heroTitle} variants={fadeUp}>
-            I build things.<br />
-            I break things.<br />
-            <H color="yellow">I figure it out.</H>
+            A Little <H color="yellow">About Me</H>
           </motion.h1>
 
           <motion.div className={styles.factsRow} variants={fadeUp}>
@@ -143,7 +140,7 @@ export default function AboutPage() {
           <Marker label="01 / who" />
 
           <motion.p className={styles.lead} variants={fadeUp}>
-            My name is <H color="mint">Uma Maheswari Chinnam</H>. Most people call me Uma —
+            My name is <H color="mint">Uma Maheswari Chinnam</H>. Most people call me Uma:
             short, sweet, easy to remember. I am a software engineer who spends most of my time
             building things on the internet: AI tools, distributed systems, full-stack apps.
             Things that solve{' '}
@@ -156,7 +153,7 @@ export default function AboutPage() {
           </PullQuote>
 
           <motion.p className={styles.body} variants={fadeUp}>
-            I love turning ideas into working products — whether that is through hackathons,
+            I love turning ideas into working products, whether that is through hackathons,
             side projects, or open-source collaboration. I document the process. I share what
             I learn. I build alongside other curious developers who care about the craft.
           </motion.p>
@@ -175,7 +172,7 @@ export default function AboutPage() {
 
           <motion.p className={styles.body} variants={fadeUp}>
             The uncertainty is real. But so is the momentum. I am persistent, and I actually
-            put in the effort — so I am hopeful about whatever comes next.
+            put in the effort, so I am hopeful about whatever comes next.
           </motion.p>
         </Section>
 
@@ -185,12 +182,12 @@ export default function AboutPage() {
 
           <motion.p className={styles.lead} variants={fadeUp}>
             I grew up in <H color="lavender">Hyderabad, India</H>. I was a math kid.
-            Genuinely nerdy about it. Then undergrad happened, and code happened — slowly
+            Genuinely nerdy about it. Then undergrad happened, and code happened, slowly
             at first, then all at once.
           </motion.p>
 
           <motion.p className={styles.body} variants={fadeUp}>
-            By second year, Java had me hooked. Not just the syntax — I wanted to understand
+            By second year, Java had me hooked. Not just the syntax. I wanted to understand
             <em> why</em> everything worked the way it did. I sat a certification exam and placed
             in the{' '}
             <H color="yellow">top 5% out of roughly 60,000 participants</H>. That was the
@@ -198,8 +195,8 @@ export default function AboutPage() {
           </motion.p>
 
           <motion.p className={styles.body} variants={fadeUp}>
-            From there: more projects, STEM events, networking. That led to Quinbay Technologies —
-            a fast-growing startup — and then a full-time position at HCL Software building
+            From there: more projects, STEM events, networking. That led to Quinbay Technologies,
+            a fast-growing startup, and then a full-time position at HCL Software building
             production data pipelines and RAG-powered AI tools at enterprise scale.
           </motion.p>
         </Section>
@@ -210,7 +207,7 @@ export default function AboutPage() {
 
           <motion.p className={styles.lead} variants={fadeUp}>
             I completed my Master's in Computer Science at Clark University, where I was a{' '}
-            <H color="mint">Dean's Scholar</H>. I also worked as a research assistant —
+            <H color="mint">Dean's Scholar</H>. I also worked as a research assistant,
             analysing deep fake detection models alongside Professor Rand Alfaris,
             benchmarking performance, and exploring ways to push the field forward.
           </motion.p>
@@ -227,7 +224,7 @@ export default function AboutPage() {
           <Marker label="05 / outside the terminal" />
 
           <motion.p className={styles.lead} variants={fadeUp}>
-            I love music more than I can explain, and I sing occasionally —
+            I love music more than I can explain, and I sing occasionally,
             <H color="pink"> not very well</H>, but with a lot of feeling. I love hiking
             and camping. There is something about being in the mountains that resets
             everything no code review ever could.
@@ -246,11 +243,11 @@ export default function AboutPage() {
 
           <PullQuote>
             "Pretty good, honestly. Busy in the way that feels productive. Building,
-            learning, job hunting, figuring things out — which is exactly where I want to be."
+            learning, job hunting, figuring things out, which is exactly where I want to be."
           </PullQuote>
 
           <motion.p className={styles.body} variants={fadeUp}>
-            If that sounds like someone you'd want on your team —{' '}
+            If that sounds like someone you'd want on your team,{' '}
             <a href="/contact">let's talk</a>.
           </motion.p>
         </Section>
