@@ -70,27 +70,26 @@ const PROOF_STATS = [
   {
     number: 40,
     suffix: '%',
-    label: 'reduction in data processing time',
-    context: 'HCL Software · Spark ETL on AWS · 10,000+ enterprise endpoints',
+    label: 'cut in ETL pipeline latency',
+    context: 'HCL Software · PySpark on AWS · 10,000+ enterprise endpoints',
   },
   {
-    number: 93,
+    number: 53,
     suffix: '%',
-    label: 'unit test coverage',
-    context: 'Quinbay · 25+ REST APIs across 5 microservices',
+    label: 'developer productivity increase',
+    context: 'HCL Software · LangChain + RAG documentation assistant',
   },
   {
-    number: 70,
+    number: 60,
     suffix: '%',
-    label: 'cut in AI API costs',
-    context: 'RAG Medical Assistant · FAISS + semantic caching',
+    label: 'cut in QA environment setup time',
+    context: 'DFX · Python automation framework · 6 hrs to 1 hr',
   },
   {
-    number: 5,
+    number: 90,
     suffix: '%',
-    prefix: 'top ',
-    label: 'Java certification',
-    context: 'Out of ~60,000 participants · That\'s when I knew.',
+    label: 'JUnit test coverage',
+    context: 'Quinbay Technologies · 120+ tests across 5 microservices',
   },
 ]
 
@@ -98,28 +97,21 @@ const WHAT_I_DO = [
   {
     emoji: '⚙️',
     title: 'Backend & Distributed Systems',
-    body: `I have shipped real distributed infrastructure: a consistent hash ring task queue with heartbeat-based failure detection, Spark ETL pipelines processing telemetry from 10,000+ endpoints, and Kafka-based event systems in production. This is not classroom knowledge. I have seen these systems fail and I have fixed them.`,
-    tags: ['Java', 'Python', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
+    body: `I've built a fault-tolerant distributed task scheduler in Python using consistent hashing and gRPC/Protobuf, hitting 98% task completion reliability with 10-second self-healing recovery. At HCL, I built PySpark ETL pipelines on AWS processing telemetry from 10,000+ enterprise endpoints.`,
+    tags: ['Python', 'Java', 'Go', 'Spring Boot', 'FastAPI', 'gRPC', 'PostgreSQL', 'Redis'],
   },
   {
     emoji: '🤖',
-    title: 'AI & GenAI in Production',
-    body: `I have built GenAI applications that actually work in production, not just API wrappers. A RAG-powered internal assistant at HCL using LangChain. A medical Q&A system with FAISS vector search and hallucination guardrails. Semantic caching that cut costs 70%. I understand the gap between "it works in a notebook" and "it works at scale."`,
-    tags: ['LangChain', 'RAG', 'FAISS', 'Sentence-Transformers', 'Gemini', 'Prompt Engineering'],
+    title: 'AI in Production',
+    body: `At HCL, I built a RAG-powered documentation assistant with LangChain that cut token usage 30% and lifted developer productivity 53%. On Gathrd, an agentic photo platform, pgvector semantic search runs sub-200ms queries.`,
+    tags: ['LangChain', 'RAG', 'pgvector', 'PyTorch', 'LLMs', 'Claude MCP'],
   },
   {
     emoji: '☁️',
-    title: 'Cloud Infrastructure & DevOps',
-    body: `I manage the whole lifecycle, not just the code. Zero-downtime EC2 deployments via CodeDeploy. Terraform-managed infra. CI/CD pipelines with automated testing. Observability with Prometheus and CloudWatch. I care about what happens after the merge.`,
-    tags: ['AWS', 'Docker', 'Terraform', 'CI/CD', 'Prometheus', 'CloudWatch', 'CodeDeploy'],
+    title: 'Cloud & Observability',
+    body: `AWS and Docker infrastructure, GitHub Actions and Jenkins CI/CD pipelines. At HCL, Grafana and CloudWatch observability helped take production uptime from 99.5% to 99.8%.`,
+    tags: ['AWS', 'GCP', 'Docker', 'GitHub Actions', 'Jenkins', 'Grafana', 'CloudWatch'],
   },
-]
-
-const WHAT_I_WANT = [
-  'A team that argues about the right way to do things, because they actually care.',
-  'Problems where the stakes are real. Systems that people depend on.',
-  'Engineers I can learn from. I am not the smartest person in any room and I am fine with that.',
-  'A place where good work is noticed, not just shipped and forgotten.',
 ]
 
 /* ── Page ───────────────────────────────────────────────────── */
@@ -139,23 +131,14 @@ export default function HireMePage() {
             <span className={styles.heroAccent}>I ship things.</span>
           </h1>
           <p className={styles.heroSub}>
-            I have built distributed systems at enterprise scale, RAG-powered AI tools
-            that work in production, and APIs that real users in Indonesia depended on
-            every day. I am a new grad with the mentality of someone who has already
-            been in the fire.
+            I've built distributed systems processing telemetry from 10,000+ enterprise
+            endpoints, an AI documentation assistant that lifted developer productivity by
+            53%, and APIs supporting 100K+ customer transactions in production.
           </p>
           <div className={styles.heroCta}>
             <a href="/contact" className={styles.ctaPrimary}>Let's talk →</a>
             <a href="/resume.docx" download className={styles.ctaSecondary}>Download resume</a>
           </div>
-        </div>
-
-        {/* ── STATEMENT ── */}
-        <div className={styles.statement}>
-          <p>
-            I am not looking for a company to take a chance on me.
-            I am looking for a team where I can do the <em>best work of my life.</em>
-          </p>
         </div>
 
         {/* ── PROOF STATS ── */}
@@ -165,7 +148,7 @@ export default function HireMePage() {
             {PROOF_STATS.map((s, i) => (
               <div key={i} className={styles.statCard}>
                 <div className={styles.statNumber}>
-                  <CountUp to={s.number} suffix={s.suffix} prefix={s.prefix} />
+                  <CountUp to={s.number} suffix={s.suffix} />
                 </div>
                 <div className={styles.statLabel}>{s.label}</div>
                 <div className={styles.statContext}>{s.context}</div>
@@ -177,9 +160,6 @@ export default function HireMePage() {
         {/* ── WHAT I DO ── */}
         <div className={styles.section}>
           <p className={styles.sectionLabel}>What I actually do</p>
-          <p className={styles.sectionNote}>
-            These are not separate tracks. My best work lives at the intersection of all three.
-          </p>
           <div className={styles.doCards}>
             {WHAT_I_DO.map(({ emoji, title, body, tags }, i) => (
               <AnimCard key={title} delay={i * 100}>
@@ -213,8 +193,7 @@ export default function HireMePage() {
               <div>
                 <p className={styles.eligTitle}>Based in Boston</p>
                 <p className={styles.eligBody}>
-                  Open to roles anywhere in the U.S. I believe being young is the best time
-                  to move somewhere new. Hybrid or in-office, I am in.
+                  Open to roles anywhere in the U.S. Hybrid or in-office both work.
                 </p>
               </div>
             </div>

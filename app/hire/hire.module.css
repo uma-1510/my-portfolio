@@ -22,14 +22,6 @@
   margin-bottom: 0.5rem;
 }
 
-.sectionNote {
-  font-size: 0.95rem;
-  color: var(--color-muted);
-  font-style: italic;
-  line-height: 1.75;
-  margin-bottom: 1.75rem;
-}
-
 .section {
   margin-bottom: 4rem;
 }
@@ -97,31 +89,6 @@
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-}
-
-/* ── Statement ───────────────────────────────────────────────── */
-.statement {
-  border-left: 3px solid var(--color-text);
-  padding: 1.25rem 1.6rem;
-  margin: 3rem 0;
-  background: var(--color-surface);
-  border-radius: 0 10px 10px 0;
-  box-shadow: var(--shadow-sm);
-}
-
-.statement p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: var(--color-text);
-  font-style: italic;
-  margin: 0;
-}
-
-.statement em {
-  font-style: normal;
-  font-weight: 700;
-  background: var(--hl-yellow);
-  padding: 0 4px;
 }
 
 /* ── Proof stats ──────────────────────────────────────────────── */
