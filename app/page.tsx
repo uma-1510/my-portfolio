@@ -40,7 +40,7 @@ export default function HomePage() {
 
         <motion.div variants={item} className={styles.statusPill}>
           <span className={styles.statusDot} />
-          actively interviewing
+          looking for opportunities
         </motion.div>
 
         <motion.h1 variants={item} className={styles.heading}>
@@ -68,8 +68,8 @@ export default function HomePage() {
           </p>
           <p className={styles.bioBody}>
             MS Computer Science at Clark University (Dean&apos;s Scholar). ~1.5 years of
-            production experience across HCL Software and Quinbay Technologies. Actively
-            looking for my first full-time role in tech.
+            production experience across HCL Software and Quinbay Technologies. Now
+            looking for opportunities in tech.
           </p>
 
           <div className={styles.rolesBox}>
@@ -82,7 +82,7 @@ export default function HomePage() {
         <motion.div variants={item} className={styles.ctaCard}>
           <h2 className={styles.ctaTitle}>Open to New Opportunities</h2>
           <p className={styles.ctaBody}>
-            I&apos;ve graduated and I&apos;m actively interviewing for full-time roles. If
+            I&apos;ve graduated and I&apos;m looking for opportunities in full-time roles. If
             you&apos;re working on something ambitious, unconventional, or technically deep
             — I&apos;d love to connect.
           </p>

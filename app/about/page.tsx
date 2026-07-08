@@ -167,8 +167,8 @@ export default function AboutPage() {
           <Marker label="02 / right now" />
 
           <motion.p className={styles.lead} variants={fadeUp}>
-            Final semester. Capstone in progress. Actively{' '}
-            <H color="peach">looking for my first full-time role in tech</H>. In between, I am
+            Freshly graduated. Actively{' '}
+            <H color="peach">looking for opportunities</H> in tech. In between, I am
             networking (yes, the human kind), attending events, and struggling to not start
             five new side projects at once.
           </motion.p>
@@ -209,8 +209,8 @@ export default function AboutPage() {
           <Marker label="04 / education" />
 
           <motion.p className={styles.lead} variants={fadeUp}>
-            I am doing my Master's in Computer Science at Clark University, where I am a{' '}
-            <H color="mint">Dean's Scholar</H>. I also work as a research assistant —
+            I completed my Master's in Computer Science at Clark University, where I was a{' '}
+            <H color="mint">Dean's Scholar</H>. I also worked as a research assistant —
             analysing deep fake detection models alongside Professor Rand Alfaris,
             benchmarking performance, and exploring ways to push the field forward.
           </motion.p>

@@ -37,12 +37,12 @@ const ENTRIES: Entry[] = [
   {
     side: 'right',
     logo: '🎓',
-    period: 'Aug 2024 – May 2026 (expected)',
+    period: 'Aug 2024 – May 2026',
     company: 'Clark University',
     role: 'Master of Science, Computer Science',
     badgeLabel: "Dean's Scholar",
     badgeColor: 'var(--hl-mint)',
-    context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Balancing coursework with research and side projects throughout.",
+    context: "Full-time MS programme at Clark University, where I was awarded the Dean's Scholarship for academic excellence. Balanced coursework with research and side projects throughout.",
     bullets: [
       "Awarded Dean's Scholar — granted for academic excellence across the programme.",
       'Core coursework spanning distributed systems, machine learning, algorithms, and advanced software engineering.',

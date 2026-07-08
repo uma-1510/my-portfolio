@@ -5,7 +5,7 @@ import styles from './Buildingticker.module.css'
 
 // ── Update this whenever you start something new ──────────────────
 const CURRENT = [
-  'Capstone project @ Clark',
+  'Next opportunity',
   'Distributed task queue',
   'This portfolio',
 ]
