@@ -1,7 +1,6 @@
 'use client'
 
 import H from '../../components/Highlight'
-import Terminal from '../../components/Terminal'
 import styles from './contact.module.css'
 
 
@@ -57,9 +56,6 @@ export default function ContactPage() {
           . I check it regularly and genuinely enjoy connecting with people there.
         </p>
 
-        {/* Terminal, types out contact details interactively */}
-        <Terminal />
-
         {/* Link chips */}
         <p className={styles.linksLabel}>Find me at</p>
         <div className={styles.linksGrid}>
@@ -76,10 +72,6 @@ export default function ContactPage() {
             </a>
           ))}
         </div>
-
-        <p className={styles.responseNote}>
-          I read every message I get. If it resonates, I will write back, usually the same day.
-        </p>
 
       </div>
     </div>

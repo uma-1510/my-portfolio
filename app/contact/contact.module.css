@@ -114,14 +114,6 @@
   line-height: 1;
 }
 
-/* ---- Response note ---- */
-.responseNote {
-  font-size: 0.88rem;
-  color: var(--color-muted);
-  font-style: italic;
-  line-height: 1.7;
-}
-
 @media (max-width: 600px) {
   .page      { padding: 0 1.25rem; }
   .linksGrid { grid-template-columns: repeat(2, auto); }
