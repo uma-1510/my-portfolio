@@ -135,8 +135,8 @@ export default function HireMePage() {
             Actively interviewing · Available immediately
           </div>
           <h1 className={styles.heroTitle}>
-            I ship things<br />
-            <span className={styles.heroAccent}>that stay shipped.</span>
+            I build things.<br />
+            <span className={styles.heroAccent}>I ship things.</span>
           </h1>
           <p className={styles.heroSub}>
             I have built distributed systems at enterprise scale, RAG-powered AI tools
