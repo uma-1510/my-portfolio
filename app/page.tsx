@@ -56,9 +56,8 @@ export default function HomePage() {
             problems for real people, not just impressive-looking demos.
           </p>
           <p className={styles.bioBody}>
-            MS Computer Science at Clark University (Dean&apos;s Scholar). 2+ years of
-            production experience across HCL Software and Quinbay Technologies. Now
-            actively interviewing in tech.
+            MS Computer Science at Clark University (Dean&apos;s Scholar). Two-plus years of
+            experience building systems in production. Now actively interviewing in tech.
           </p>
 
           <div className={styles.rolesBox}>
@@ -101,3 +100,4 @@ export default function HomePage() {
     </div>
   )
 }
+
