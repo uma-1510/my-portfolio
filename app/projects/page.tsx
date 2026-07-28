@@ -120,6 +120,20 @@ const PROJECTS = [
     tech:   ['Python', 'TensorFlow', 'CNN', 'OpenCV'],
     github: 'https://github.com/uma-1510/sign-language-detection',
   },
+  {
+    title:  'Kintsugi — Self-Healing Code Agent',
+    emoji:  '🩹',
+    desc:   'An agent that writes Python code from a problem statement, runs it in an isolated Docker sandbox, and reads its own traceback to repair itself within a bounded retry budget. Built as a LangGraph state graph and evaluated as a benchmark harness, not a single demo run.',
+    tech:   ['Python', 'LangGraph', 'Docker', 'Gemini'],
+    github: 'https://github.com/uma-1510/resilient-agent-eval',
+  },
+  {
+    title:  'Gathrd AI',
+    emoji:  '📸',
+    desc:   'A full-stack photo management platform (capstone project) that intelligently organizes photos with smart sort and search, and exposes its functionality to Claude through MCP endpoints.',
+    tech:   ['Next.js', 'PostgreSQL', 'NextAuth', 'MCP'],
+    github: 'https://github.com/uma-1510/gathrd-AI',
+  },
 ]
 
 export default function ProjectsPage() {
@@ -165,3 +179,4 @@ export default function ProjectsPage() {
     </div>
   )
 }
+
