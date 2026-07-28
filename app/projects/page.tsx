@@ -79,11 +79,18 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
    ============================================ */
 const PROJECTS = [
   {
-    title:  'Resume OS',
-    emoji:  '📄',
-    desc:   'A browser extension that reads a live job posting and instantly rewrites your resume to match it: 100% client-side, no data ever leaves your machine. Built for job seekers who are tired of tailoring resumes manually.',
-    tech:   ['Node.js', 'React', 'LLMs', 'DOCX generation'],
-    github: 'https://github.com/uma-1510/resume-os',
+    title:  'Self-Healing Code Agent',
+    emoji:  '🩹',
+    desc:   'An agent that writes Python code from a problem statement, runs it in an isolated Docker sandbox, and reads its own traceback to repair itself within a bounded retry budget. Built as a LangGraph state graph and evaluated as a benchmark harness, not a single demo run.',
+    tech:   ['Python', 'LangGraph', 'Docker', 'Gemini'],
+    github: 'https://github.com/uma-1510/resilient-agent-eval',
+  },
+  {
+    title:  'Distributed Task Queue',
+    emoji:  '⚙️',
+    desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies, for zero task loss under failure.',
+    tech:   ['Python', 'gRPC', 'Redis', 'PostgreSQL', 'REST API'],
+    github: 'https://github.com/uma-1510/distributed-task-queue',
   },
   {
     title:  'RAG-Powered Medical Assistant',
@@ -93,11 +100,11 @@ const PROJECTS = [
     github: 'https://github.com/uma-1510/rag-medical-assistant',
   },
   {
-    title:  'Distributed Task Queue',
-    emoji:  '⚙️',
-    desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies, for zero task loss under failure.',
-    tech:   ['Python', 'gRPC', 'Redis', 'PostgreSQL', 'REST API'],
-    github: 'https://github.com/uma-1510/distributed-task-queue',
+    title:  'Resume OS',
+    emoji:  '📄',
+    desc:   'A browser extension that reads a live job posting and instantly rewrites your resume to match it: 100% client-side, no data ever leaves your machine. Built for job seekers who are tired of tailoring resumes manually.',
+    tech:   ['Node.js', 'React', 'LLMs', 'DOCX generation'],
+    github: 'https://github.com/uma-1510/resume-os',
   },
   {
     title:  'Async Job Manager Platform',
@@ -119,13 +126,6 @@ const PROJECTS = [
     desc:   'A CNN-based gesture recognition system that captures real-time webcam input and classifies hand gestures into 10 classes. Reached 99%+ training accuracy within 5 epochs using TensorFlow/Keras.',
     tech:   ['Python', 'TensorFlow', 'CNN', 'OpenCV'],
     github: 'https://github.com/uma-1510/sign-language-detection',
-  },
-  {
-    title:  'Kintsugi — Self-Healing Code Agent',
-    emoji:  '🩹',
-    desc:   'An agent that writes Python code from a problem statement, runs it in an isolated Docker sandbox, and reads its own traceback to repair itself within a bounded retry budget. Built as a LangGraph state graph and evaluated as a benchmark harness, not a single demo run.',
-    tech:   ['Python', 'LangGraph', 'Docker', 'Gemini'],
-    github: 'https://github.com/uma-1510/resilient-agent-eval',
   },
   {
     title:  'Gathrd AI',
