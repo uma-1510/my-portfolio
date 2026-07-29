@@ -10,6 +10,7 @@ interface NavLink {
   href: string
   label: string
   icon: React.ReactNode
+  highlight?: boolean
 }
 
 const iconProps = {
@@ -37,7 +38,8 @@ const NAV_LINKS: NavLink[] = [
     icon: <svg {...iconProps}><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="3" y1="13" x2="21" y2="13" /></svg>,
   },
   {
-    href: '/work', label: 'Work',
+    href: '/work', label: 'Work Experience',
+    highlight: true,
     icon: <svg {...iconProps}><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" /></svg>,
   },
   {
@@ -89,13 +91,13 @@ export default function Sidebar() {
       </div>
 
       <nav className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
-        {NAV_LINKS.map(({ href, label, icon }) => {
+        {NAV_LINKS.map(({ href, label, icon, highlight }) => {
           const isActive = pathname === href
           return (
             <Link
               key={href}
               href={href}
-              className={`${styles.link} ${isActive ? styles.active : ''}`}
+              className={`${styles.link} ${isActive ? styles.active : ''} ${highlight ? styles.highlight : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               <span className={styles.icon}>{icon}</span>
