@@ -132,6 +132,7 @@ const PROJECTS = [
   {
     title:  'Distributed Task Queue',
     emoji:  '⚙️',
+    image:  '/images/distributed-task-queue-architecture.png',
     featured: true,
     desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies, for zero task loss under failure.',
     tech:   ['Python', 'Redis', 'PostgreSQL', 'Docker'],
