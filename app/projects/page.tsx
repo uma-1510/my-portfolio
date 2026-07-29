@@ -4,14 +4,45 @@ import { useEffect, useRef } from 'react'
 import type { Metadata } from 'next'
 import styles from './projects.module.css'
 
+/* ---- tech name -> simple-icons slug (renders the real brand logo) ---- */
+const TECH_ICONS: Record<string, string> = {
+  'Python': 'python',
+  'Node.js': 'nodedotjs',
+  'React': 'react',
+  'TypeScript': 'typescript',
+  'Next.js': 'nextdotjs',
+  'FastAPI': 'fastapi',
+  'Docker': 'docker',
+  'PostgreSQL': 'postgresql',
+  'MongoDB': 'mongodb',
+  'Redis': 'redis',
+  'TensorFlow': 'tensorflow',
+  'OpenCV': 'opencv',
+  'Terraform': 'terraform',
+  'Gemini': 'googlegemini',
+  'LangGraph': 'langchain',
+  'Sentence-Transformers': 'huggingface',
+  'OpenAPI': 'openapiinitiative',
+}
+
+/* ---- pin icon for the "Featured" badge ---- */
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16 3l5 5-5.5 5.5L17 18l-1 1-4.5-4.5L6 20l-2-2 5.5-5.5L5 8l1-1 4.5 4.5L16 3z" />
+    </svg>
+  )
+}
+
 /* ---- Animated project card ---- */
-function ProjectCard({ title, desc, tech, github, emoji, image, delay = 0 }: {
+function ProjectCard({ title, desc, tech, github, emoji, image, featured, delay = 0 }: {
   title: string
   desc: string
   tech: string[]
   github: string
   emoji: string
   image?: string
+  featured?: boolean
   delay?: number
 }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -36,6 +67,12 @@ function ProjectCard({ title, desc, tech, github, emoji, image, delay = 0 }: {
 
       {/* Preview area: drop an <img> or <video> here when ready */}
       <div className={styles.cardPreview}>
+        {featured && (
+          <span className={styles.featuredBadge}>
+            <PinIcon />
+            Featured
+          </span>
+        )}
         {image ? (
           <img src={image} alt={title} />
         ) : (
@@ -62,9 +99,16 @@ function ProjectCard({ title, desc, tech, github, emoji, image, delay = 0 }: {
         <p className={styles.cardDesc}>{desc}</p>
 
         <div className={styles.techRow}>
-          {tech.map(t => (
-            <span key={t} className={styles.tech}>{t}</span>
-          ))}
+          {tech.map(t => {
+            const slug = TECH_ICONS[t]
+            return slug ? (
+              <span key={t} className={styles.techIcon} title={t}>
+                <img src={`https://cdn.simpleicons.org/${slug}`} alt={t} />
+              </span>
+            ) : (
+              <span key={t} className={styles.techFallback}>{t}</span>
+            )
+          })}
         </div>
       </div>
 
@@ -80,6 +124,7 @@ const PROJECTS = [
     title:  'Self-Healing Code Agent',
     emoji:  '🩹',
     image:  '/images/self-healing-agent-results.png',
+    featured: true,
     desc:   'An agent that writes Python code from a problem statement, runs it in an isolated Docker sandbox, and reads its own traceback to repair itself within a bounded retry budget. Built as a LangGraph state graph and evaluated as a benchmark harness, not a single demo run.',
     tech:   ['Python', 'LangGraph', 'Docker', 'Gemini'],
     github: 'https://github.com/uma-1510/resilient-agent-eval',
@@ -87,51 +132,54 @@ const PROJECTS = [
   {
     title:  'Distributed Task Queue',
     emoji:  '⚙️',
+    featured: true,
     desc:   'A distributed job scheduler with a consistent hash ring that routes jobs to worker nodes without a central bottleneck. Heartbeat-based failure detection auto-reassigns jobs when a node dies, for zero task loss under failure.',
-    tech:   ['Python', 'gRPC', 'Redis', 'PostgreSQL', 'REST API'],
-    github: 'https://github.com/uma-1510/distributed-task-queue',
+    tech:   ['Python', 'Redis', 'PostgreSQL', 'Docker'],
+    github: 'https://github.com/uma-1510/distributed-task-scheduler-',
   },
   {
     title:  'RAG-Powered Medical Assistant',
     emoji:  '🏥',
+    featured: true,
     desc:   'A full-stack medical Q&A assistant that retrieves grounded answers from a document corpus using FAISS vector search. Semantic caching cuts API costs by 70% and guardrails prevent hallucinations in a healthcare context.',
-    tech:   ['FastAPI', 'React', 'FAISS', 'Sentence-Transformers', 'Gemini'],
-    github: 'https://github.com/uma-1510/rag-medical-assistant',
+    tech:   ['Python', 'Sentence-Transformers', 'Gemini'],
+    github: 'https://github.com/uma-1510/Rag-powered-medical-assistant',
+  },
+  {
+    title:  'Gathrd AI',
+    emoji:  '📸',
+    featured: true,
+    desc:   'A full-stack photo management platform (capstone project) that intelligently organizes photos with smart sort and search, and exposes its functionality to Claude through MCP endpoints.',
+    tech:   ['Next.js', 'TypeScript', 'PostgreSQL'],
+    github: 'https://github.com/uma-1510/gathrd-AI',
   },
   {
     title:  'Resume OS',
     emoji:  '📄',
     desc:   'A browser extension that reads a live job posting and instantly rewrites your resume to match it: 100% client-side, no data ever leaves your machine. Built for job seekers who are tired of tailoring resumes manually.',
-    tech:   ['Node.js', 'React', 'LLMs', 'DOCX generation'],
+    tech:   ['Node.js', 'React', 'Gemini'],
     github: 'https://github.com/uma-1510/resume-os',
   },
   {
     title:  'Async Job Manager Platform',
     emoji:  '🚀',
     desc:   'A Python/FastAPI async execution platform with a 5-state job lifecycle, mid-execution cancellation, and real-time stdout/stderr streaming. Zero-downtime EC2 deployments via CodeDeploy and Terraform-managed infra.',
-    tech:   ['FastAPI', 'AWS EC2', 'CodeDeploy', 'Terraform', 'OpenAPI'],
-    github: 'https://github.com/uma-1510/async-job-manager',
+    tech:   ['FastAPI', 'React', 'PostgreSQL', 'Terraform'],
+    github: 'https://github.com/uma-1510/AsyncJob-Manager-API',
   },
   {
     title:  'Database Backup Utility CLI',
     emoji:  '🗃️',
     desc:   'A modular CLI supporting 4 database types via an adapter pattern, with SHA-256 checksum validation, gzip compression, structured logging, and S3 cloud storage. Reduces database-specific code dependency by 60%.',
-    tech:   ['Python', 'AWS S3', 'CLI', 'PostgreSQL', 'MongoDB'],
-    github: 'https://github.com/uma-1510/db-backup-cli',
+    tech:   ['Python', 'PostgreSQL', 'MongoDB', 'Docker'],
+    github: 'https://github.com/uma-1510/Database_backup_utility_CLI',
   },
   {
     title:  'Sign Language Detection',
     emoji:  '🤟',
     desc:   'A CNN-based gesture recognition system that captures real-time webcam input and classifies hand gestures into 10 classes. Reached 99%+ training accuracy within 5 epochs using TensorFlow/Keras.',
-    tech:   ['Python', 'TensorFlow', 'CNN', 'OpenCV'],
-    github: 'https://github.com/uma-1510/sign-language-detection',
-  },
-  {
-    title:  'Gathrd AI',
-    emoji:  '📸',
-    desc:   'A full-stack photo management platform (capstone project) that intelligently organizes photos with smart sort and search, and exposes its functionality to Claude through MCP endpoints.',
-    tech:   ['Next.js', 'PostgreSQL', 'NextAuth', 'MCP'],
-    github: 'https://github.com/uma-1510/gathrd-AI',
+    tech:   ['Python', 'TensorFlow', 'OpenCV'],
+    github: 'https://github.com/uma-1510/sign_language_recognition',
   },
 ]
 
