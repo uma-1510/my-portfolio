@@ -143,34 +143,21 @@
   transform: translateX(0);
 }
 
-/* ---- Highlighted link (Work Experience: this is the resume replacement) ---- */
+/* ---- Highlighted link: only applied together with .active (i.e. once clicked) ---- */
 .highlight {
-  position: relative;
+  background: var(--color-surface-hi);
+  border: 1px solid var(--color-border);
   color: var(--color-text);
-  background: rgba(124, 156, 255, 0.14);
-  border: 1px solid rgba(124, 156, 255, 0.4);
   font-weight: 700;
 }
 
 .highlight .icon {
-  color: var(--color-accent);
   opacity: 1;
 }
 
-.highlight:hover {
-  color: var(--color-text);
-  background: rgba(124, 156, 255, 0.22);
-  border-color: rgba(124, 156, 255, 0.6);
-}
-
 .highlight .arrow {
-  opacity: 0.65;
-  color: var(--color-accent);
-}
-
-.highlight.active {
-  background: rgba(124, 156, 255, 0.26);
-  border-color: var(--color-accent);
+  opacity: 0.75;
+  transform: translateX(0);
 }
 
 /* ---- Footer ---- */
