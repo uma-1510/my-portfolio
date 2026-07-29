@@ -5,12 +5,13 @@ import type { Metadata } from 'next'
 import styles from './projects.module.css'
 
 /* ---- Animated project card ---- */
-function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
+function ProjectCard({ title, desc, tech, github, emoji, image, delay = 0 }: {
   title: string
   desc: string
   tech: string[]
   github: string
   emoji: string
+  image?: string
   delay?: number
 }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -35,17 +36,14 @@ function ProjectCard({ title, desc, tech, github, emoji, delay = 0 }: {
 
       {/* Preview area: drop an <img> or <video> here when ready */}
       <div className={styles.cardPreview}>
-        {/*
-          TO ADD AN IMAGE:
-          <img src="/images/your-project.png" alt={title} />
-
-          TO ADD A VIDEO:
-          <video src="/videos/your-demo.mp4" autoPlay muted loop playsInline />
-        */}
-        <div className={styles.previewPlaceholder}>
-          <span className={styles.previewEmoji}>{emoji}</span>
-          <span className={styles.previewLabel}>add screenshot or demo</span>
-        </div>
+        {image ? (
+          <img src={image} alt={title} />
+        ) : (
+          <div className={styles.previewPlaceholder}>
+            <span className={styles.previewEmoji}>{emoji}</span>
+            <span className={styles.previewLabel}>add screenshot or demo</span>
+          </div>
+        )}
       </div>
       <div className={styles.cardBody}>
         <div className={styles.cardHeader}>
@@ -81,6 +79,7 @@ const PROJECTS = [
   {
     title:  'Self-Healing Code Agent',
     emoji:  '🩹',
+    image:  '/images/self-healing-agent-results.png',
     desc:   'An agent that writes Python code from a problem statement, runs it in an isolated Docker sandbox, and reads its own traceback to repair itself within a bounded retry budget. Built as a LangGraph state graph and evaluated as a benchmark harness, not a single demo run.',
     tech:   ['Python', 'LangGraph', 'Docker', 'Gemini'],
     github: 'https://github.com/uma-1510/resilient-agent-eval',
