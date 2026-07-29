@@ -148,6 +148,7 @@ const PROJECTS = [
   {
     title:  'Gathrd AI',
     emoji:  '📸',
+    image:  '/images/gathrd-login-screen.png',
     featured: true,
     desc:   'A full-stack photo management platform (capstone project) that intelligently organizes photos with smart sort and search, and exposes its functionality to Claude through MCP endpoints.',
     tech:   ['Next.js', 'TypeScript', 'PostgreSQL'],
