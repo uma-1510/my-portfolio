@@ -30,10 +30,6 @@ const NAV_LINKS: NavLink[] = [
     icon: <svg {...iconProps}><path d="M20 13c0 5-3.5 7.5-7.35 8.95a1 1 0 0 1-.6.01C8.5 20.5 5 18 5 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C15.51 3.81 18 5 20 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg>,
   },
   {
-    href: '/about', label: 'About',
-    icon: <svg {...iconProps}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
-  },
-  {
     href: '/hire', label: 'Hire Me',
     icon: <svg {...iconProps}><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="3" y1="13" x2="21" y2="13" /></svg>,
   },
@@ -49,6 +45,10 @@ const NAV_LINKS: NavLink[] = [
   {
     href: '/blog', label: 'Blog',
     icon: <svg {...iconProps}><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>,
+  },
+  {
+    href: '/about', label: 'A little about me',
+    icon: <svg {...iconProps}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
   },
   {
     href: '/contact', label: 'Contact',
