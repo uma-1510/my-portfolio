@@ -97,7 +97,7 @@ export default function Sidebar() {
             <Link
               key={href}
               href={href}
-              className={`${styles.link} ${isActive ? styles.active : ''} ${highlight ? styles.highlight : ''}`}
+              className={`${styles.link} ${isActive ? styles.active : ''} ${highlight && isActive ? styles.highlight : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               <span className={styles.icon}>{icon}</span>
